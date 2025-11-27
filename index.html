@@ -447,7 +447,7 @@
     
     <style>
         [x-cloak] { display: none !important; }
-        body { background-color: #ffffff; color: #333; line-height: 1.5; }
+        body { background-color: transparent; color: #333; line-height: 1.5; }
         h1 { color: #e30613; font-size: 28px; font-weight: 700; margin-bottom: 20px; line-height: 1.1; }
         h2 { color: #333; font-size: 22px; font-weight: 700; margin-top: 30px; margin-bottom: 15px; line-height: 1.2; }
         h3 { color: #333; font-size: 18px; font-weight: 700; margin-bottom: 10px; }
@@ -459,8 +459,36 @@
         .btn-primary:hover { background-color: #333; }
         .cs-cookie-layer { border-top: 5px solid #e30613; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
     </style>
+
+    <style>
+        /* Global page frame to mirror Klinikum St. Georg corporate layout */
+        .page-frame {
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.08);
+            border: 1px solid #dadada;
+        }
+
+        .page-shell {
+            background: linear-gradient(180deg, #f2f2f2 0%, #f7f7f7 38%, #fdfdfd 100%);
+        }
+
+        .section-surface {
+            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+            border: 1px solid #ececec;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        @media (max-width: 1024px) {
+            .page-frame {
+                border-left: none;
+                border-right: none;
+                box-shadow: none;
+            }
+        }
+    </style>
 </head>
-<body x-data="clinicApp()" x-init="initApp()" class="flex flex-col min-h-screen">
+<body x-data="clinicApp()" x-init="initApp()" class="page-shell flex flex-col min-h-screen">
+
+    <div class="page-frame max-w-[1280px] mx-auto bg-white flex flex-col min-h-screen">
 
     <!-- HEADER: TOP BAR -->
     <div class="bg-[#f5f5f5] border-b border-[#e5e5e5] text-xs text-[#666] py-2">
@@ -533,19 +561,20 @@
     </div>
 
     <!-- BREADCRUMBS -->
-    <div class="bg-white border-b border-[#e5e5e5] py-2 mb-8">
-        <div class="container text-xs text-[#666]">
+    <div class="bg-gradient-to-r from-[#f7f7f7] to-[#ffffff] border-y border-[#e1e1e1] py-3 mb-8 shadow-sm">
+        <div class="container text-xs text-[#666] px-4 md:px-0">
             <span class="hover:text-primary cursor-pointer" @click="setView('home')">Startseite</span>
             <span class="mx-2 text-[#ccc]">&gt;</span>
             <span class="hover:text-primary cursor-pointer">Kliniken & Zentren</span>
             <span class="mx-2 text-[#ccc]">&gt;</span>
             <span class="font-bold text-[#333] uppercase" x-text="breadcrumb"></span>
         </div>
-    </div>
+    </div> <!-- /page-frame -->
 
     <!-- MAIN CONTAINER -->
-    <div class="container flex-grow mb-16">
-        <div class="flex flex-col lg:flex-row gap-8">
+    <div class="container flex-grow mb-16 px-4 md:px-0">
+        <div class="section-surface p-6 md:p-10">
+            <div class="flex flex-col lg:flex-row gap-8">
             
             <!-- LEFT COLUMN -->
             <main class="w-full lg:w-3/4">
@@ -1339,6 +1368,7 @@
                 </div>
 
             </aside>
+            </div>
         </div>
     </div>
 
@@ -1420,7 +1450,9 @@
             </div>
         </div>
     </div>
-    
+
+    </div> <!-- /page-frame -->
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
