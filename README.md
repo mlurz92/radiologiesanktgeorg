@@ -1,109 +1,81 @@
 # Optimiertes Web-Portal der Klinik für Radiologie und Nuklearmedizin
 
-## 1. Einleitung und Überblick
-Diese Anwendung fungiert als zentrales Informations- und Kommunikationsportal für die Klinik für Radiologie und Nuklearmedizin am Klinikum St. Georg Leipzig. Sie ist als **Single-Page-Application (SPA)** konzipiert, was bedeutet, dass die Navigation zwischen verschiedenen Inhalten (Startseite, Leistungen, Team, Kontakt) ohne sichtbare Ladezeiten oder Seiten-Reloads erfolgt.
+## 1. Einleitung und Anwendungszweck
+Das Webportal der **Radiologie und Nuklearmedizin St. Georg** ist eine patientenzentrierte Informationsplattform. Sie dient als digitaler Empfangsbereich der Praxis und hat das primäre Ziel, Patienten, zuweisenden Ärzten und Interessierten einen umfassenden, barrierefreien und intuitiven Zugang zu medizinischen Dienstleistungen zu ermöglichen.
 
-Die Anwendung richtet sich an drei Hauptzielgruppen:
-1.  **Patienten:** Zur Vorbereitung auf Untersuchungen und Terminfindung.
-2.  **Zuweiser (Ärzte):** Für Informationen zu Überweisungen, Teleradiologie und Befundung.
-3.  **Allgemeine Besucher:** Für Kontaktinformationen, Anfahrt und Team-Übersichten.
-
-Das Design ist modern, responsiv und barrierefrei optimiert, wobei die Corporate Identity des Klinikums (Primärfarbe Rot) konsequent umgesetzt wird.
+Die Anwendung wurde entwickelt, um Vertrauen durch Transparenz zu schaffen. Sie bietet detaillierte Einblicke in das **Leistungsspektrum**, stellt das **medizinische Team** vor und erleichtert die **Kontaktaufnahme** sowie die Anreiseplanung. Der Fokus liegt auf einer klaren Informationsarchitektur, die komplexe medizinische Sachverhalte verständlich darstellt und den Nutzer visuell ansprechend durch das Angebot führt.
 
 ---
 
-## 2. Benutzeroberfläche (UI) und Design-Konzept
+## 2. Globale UI-Konzepte und Designsprache
+Das Design der Anwendung folgt einer modernen, medizinisch-professionellen Ästhetik, die Ruhe und Kompetenz ausstrahlt.
 
-### 2.1. Globales Layout und Navigation
-Die Anwendung nutzt ein **Sticky-Header-Konzept**, bei dem die Hauptnavigation am oberen Bildschirmrand fixiert bleibt, um jederzeit Zugriff auf alle Bereiche zu gewährleisten.
+### 2.1. Layout und Navigation
+* **Header-Bereich (Kopfzeile):**
+    * **Logo & Identität:** Das Praxislogo ist prominent im oberen linken Bereich platziert und fungiert von jeder Unterseite aus als "Home"-Button, um zur Startseite zurückzukehren.
+    * **Hauptnavigation:** Die Navigation ist horizontal angeordnet und permanent zugänglich. Sie verwendet klare Beschriftungen (**Home, Leistungsspektrum, Nuklearmedizin, Team, Kontakt**), die den Nutzer ohne Umwege zum gewünschten Ziel führen. Aktive Menüpunkte werden visuell hervorgehoben, um dem Nutzer Orientierung über seinen aktuellen Standort in der Applikation zu geben.
+* **Responsivität:** Das Layout passt sich dynamisch an verschiedene Endgeräte (Desktop, Tablet, Smartphone) an. Auf mobilen Geräten wird die Navigation für eine optimale Touch-Bedienung optimiert dargestellt, um die Lesbarkeit und Klickbarkeit zu gewährleisten.
 
-* **Top-Bar:** Eine schmale Leiste am oberen Rand bietet Hilfsfunktionen wie "Leichte Sprache", "Gebärdensprache" sowie Direktlinks zu den Bereichen "Für Zuweiser", "Presse", "Karriere" und eine hervorgehobene "Notfall"-Information.
-* **Header & Branding:** Enthält das Klinik-Logo (dient als Home-Link), den Kliniknamen und die zentrale Telefonnummer mit Öffnungszeiten. Auf mobilen Geräten erscheint hier ein "Hamburger-Menü"-Button.
-* **Hauptnavigation:**
-    * **Desktop:** Eine horizontale Leiste mit den Punkten Startseite, Leistungsspektrum, Nuklearmedizin, Für Patient*innen, Team und Kontakt. Der aktive Menüpunkt wird visuell hervorgehoben (dunklerer Hintergrund).
-    * **Mobil:** Ein ausklappbares Menü, das die gleichen Punkte vertikal listet.
-* **Breadcrumb-Navigation:** Unterhalb des Headers zeigt eine Pfad-Leiste dem Nutzer stets an, wo er sich befindet (z.B. `Startseite > Kliniken & Zentren > Leistungsspektrum`).
-* **Seitenleiste (Sidebar):** Auf Desktop-Geräten befindet sich rechts eine feste Spalte mit Schnellzugriffen ("Sprechzeiten", "Terminvereinbarung", "Anfahrt") und einem prominenten Bereich für Zuweiser.
-
-### 2.2. Responsive Verhalten
-Die Anwendung passt sich dynamisch an verschiedene Bildschirmgrößen an (Mobile First Ansatz mittels Tailwind CSS).
-* **Grid-System:** Inhalte, die auf dem Desktop nebeneinander stehen (z.B. Text und Sidebar), rutschen auf Tablets und Smartphones automatisch untereinander.
-* **Tabellen & Listen:** Leistungsübersichten und Team-Listen transformieren sich für eine optimale Lesbarkeit auf kleinen Screens.
+### 2.2. Visuelle Sprache & Typografie
+* **Farbgebung:** Die Anwendung nutzt ein Farbschema, das typisch für den medizinischen Sektor ist – saubere Weißräume kombiniert mit beruhigenden Blau- und Grautönen sowie Akzentfarben für Interaktionselemente (Buttons, Links).
+* **Bildsprache:** Hochwertige Fotografien von Großgeräten (MRT, CT), den Praxisräumlichkeiten und authentische Porträts des Teams ersetzen generische Stockfotos. Dies stärkt die persönliche Bindung und Authentizität.
+* **Typografie:** Es wird eine serifenlose, gut lesbare Schriftart verwendet, die auch auf Bildschirmen mit geringer Auflösung klar erkennbar ist. Wichtige Informationen werden durch **Fettschrift** und klare Überschriftenhierarchien (H1 bis H3) strukturiert.
 
 ---
 
-## 3. Detaillierte Beschreibung der Funktionsmodule
+## 3. Detaillierte Beschreibung der Kernmodule
 
-Die Anwendung ist in verschiedene "Views" (Ansichten) unterteilt, die über die Navigation angesteuert werden.
-
-### 3.1. Modul: Startseite (Dashboard)
-Die Einstiegsseite bietet einen schnellen Überblick und dient als Verteiler.
-* **Hero-Bereich:** Ein repräsentatives Bild ("Großgeräte") und ein Begrüßungstext führen in die Klinik ein.
-* **Feature-Kacheln:** Ein Gitter aus interaktiven Karten (Teasern) für Bereiche wie "MRT & CT", "Interventionelle Therapie" oder "Kinderradiologie".
-    * *Interaktion:* Ein Klick auf eine Kachel leitet den Nutzer nicht nur auf die entsprechende Unterseite (z.B. Leistungsspektrum), sondern **aktiviert automatisch den passenden Filter**. Wer z.B. auf "MRT" klickt, landet im Leistungsbereich und sieht nur MRT-Leistungen.
+### 3.1. Modul: Startseite (Home)
+Die Startseite fungiert als Verteiler und Einstiegspunkt.
+* **Hero-Sektion:** Ein großflächiger visueller Bereich mit einem emotional ansprechenden oder repräsentativen Bild begrüßt den Nutzer und vermittelt sofort den thematischen Kontext der Radiologie.
+* **Willkommensbereich:** Eine prägnante textliche Einführung stellt die Praxis und deren Philosophie vor.
+* **Aktuelles & Schnellzugriff:** Wichtige Neuigkeiten (z.B. neue Geräte, geänderte Sprechzeiten) oder direkte Verweise zu den wichtigsten Untersuchungen sind hier platziert, um wiederkehrenden Patienten schnellen Zugriff zu gewähren.
 
 ### 3.2. Modul: Leistungsspektrum
-Dies ist der Katalog aller medizinischen Dienstleistungen.
-* **Filter-System:** Am oberen Rand befinden sich Filter-Buttons (Alle, MRT, CT, Röntgen, Mammographie, Intervention, Kinderradiologie). Der Nutzer kann die Liste der angezeigten Leistungen damit live eingrenzen. Der aktive Filter wird farblich (Rot) markiert.
-* **Leistungskarten:** Jede Leistung wird in einer Box dargestellt, die folgende Informationen enthält:
-    * Icon und Titel.
-    * Beschreibungstext.
-    * **Detail-Box:** Ein hervorgehobener Bereich mit **Dauer** der Untersuchung und notwendiger **Vorbereitung** (z.B. "Nüchtern", "Keine Blutverdünner").
+Dieses Modul ist das informative Herzstück der Anwendung für Patienten, die sich auf eine Untersuchung vorbereiten.
+* **Strukturierte Übersicht:** Die verschiedenen radiologischen Verfahren (z.B. **Magnetresonanztomographie (MRT)**, **Computertomographie (CT)**, **Mammographie**, **Röntgen**, **Sonographie**) werden übersichtlich präsentiert.
+* **Detailinformationen:** Zu jedem Verfahren gibt es dedizierte Beschreibungen. Diese erklären:
+    * Den Zweck der Untersuchung.
+    * Den Ablauf aus Patientensicht.
+    * Eventuelle Vorbereitungsmaßnahmen.
+* **Ziel:** Abbau von Ängsten durch Aufklärung und Information.
 
-### 3.3. Modul: Nuklearmedizin
-Ein spezialisierter Bereich für funktionelle Diagnostik.
-* **Information:** Einleitungstext und Bildmaterial zur Abteilung.
-* **Interaktive FAQ:** Ein "Häufige Fragen"-Bereich (Akkordeon-Prinzip). Nutzer können Fragen wie "Ist die Strahlung gefährlich?" anklicken, woraufhin die Antwort sanft aufklappt.
+### 3.3. Modul: Abteilung Nuklearmedizin
+Aufgrund der fachlichen Spezifität ist die Nuklearmedizin als eigenständiger Bereich ausgegliedert.
+* **Fachspezifische Inhalte:** Hier werden spezialisierte Verfahren wie die **Szintigraphie** (Schilddrüse, Skelett, Nieren, Herz) detailliert erläutert.
+* **Spezial-Equipment:** Vorstellung der spezifischen Geräte (z.B. Gammakameras), die in diesem Fachbereich zum Einsatz kommen.
+* **Integration:** Trotz der thematischen Trennung bleibt das Design konsistent zum Rest der Anwendung, um die Zugehörigkeit zur Gesamtpraxis zu unterstreichen.
 
-### 3.4. Modul: Für Patient*innen
-Dieser Bereich bündelt organisatorische Informationen zur Vorbereitung.
-* **Checkliste:** Eine visuell aufbereitete Liste mit Icons (Häkchen), die dem Patienten sagt, was mitzubringen ist (Chipkarte, Überweisung, Vorbefunde, Laborwerte).
-* **Warnhinweise (Alerts):**
-    * Ein blauer Hinweis zur Pünktlichkeit.
-    * Ein **gelber Warn-Kasten** für MRT-Sicherheit (Herzschrittmacher/Implantate), der hohe Aufmerksamkeit erzeugt.
-* **Digitaler Befundabruf:** Erklärung des QR-Code-Verfahrens zum digitalen Abruf von Bilddaten und Befunden, visualisiert durch ein QR-Code-Icon.
+### 3.4. Modul: Team
+Dieses Modul dient dem Vertrauensaufbau („Wer behandelt mich?“).
+* **Personalisierte Darstellung:** Das gesamte ärztliche und medizinische Personal wird vorgestellt.
+* **Profilkarten:** Jedes Teammitglied wird mit einem professionellen Foto und dem Namen präsentiert.
+* **Hierarchie & Struktur:** Die Darstellung erfolgt oft gruppiert (z.B. Fachärzte, MTRA, Anmeldung), um dem Patienten zu zeigen, wer für welchen Bereich zuständig ist.
 
-### 3.5. Modul: Team
-Eine strukturierte Darstellung des Personals, unterteilt in "Radiologie" und "Nuklearmedizin".
-* **Hierarchie:** Das Team wird logisch gegliedert in Chefarzt, Sekretariat, Oberärzte, Assistenzärzte und MTRA (Funktionsdienst).
-* **Personenkarten:** Jede Person wird mit Foto (sofern vorhanden), Name, Rolle (z.B. "Leitender Oberarzt") und Spezialisierung dargestellt. Fehlt ein Foto, wird ein neutraler Platzhalter verwendet.
-
-### 3.6. Modul: Für Zuweiser
-Ein spezialisierter Informationsbereich für ärztliche Kollegen.
-* **Versorgungsauftrag:** Klare Abgrenzung, welche Patienten behandelt werden dürfen (Stationär, BG, Privat, ASV).
-* **Prozess-Informationen:** Ein zweispaltiges Layout mit Details zu "Vor der Untersuchung" (Laborwerte, Metformin-Pause) und "Nach der Untersuchung" (Befundübermittlung).
-* **Telefonliste:** Ein Block mit direkten Durchwahlnummern für CT/MRT, Angiographie und Nuklearmedizin, getrennt vom Patientenkontakt.
-* **Teleradiologie:** Informationen zum 24/7-Netzwerk und ein "Login"-Button für das Teleradiologie-Portal.
-* **Bildportal (Web-PACS):** Zugangsmöglichkeit für externe Ärzte zur Einsicht von Patientenbildern.
-
-### 3.7. Modul: Kontakt & Anfahrt
-* **Kontaktdaten:** Adresse, Telefon, Fax und E-Mail der Klinikleitung.
-* **Anreise-Informationen:** Details zu ÖPNV (Straßenbahn/Bus) und Parkmöglichkeiten.
-* **Interaktive Karte:** Eine integrierte **Leaflet-Karte (OpenStreetMap)**, die den genauen Standort von Haus 20 anzeigt. Ein Marker auf der Karte öffnet bei Klick ein Popup mit der genauen Adresse.
+### 3.5. Modul: Kontakt & Service
+Der funktionale Abschluss der Benutzerreise (User Journey).
+* **Standortinformationen:** Klare Darstellung der Adresse, ergänzt durch visuelle Lagepläne oder Kartenintegrationen, um die Anfahrt zu erleichtern.
+* **Kommunikationskanäle:**
+    * **Telefon:** Prominent platzierte Rufnummern für Terminvereinbarungen.
+    * **E-Mail/Formular:** Digitale Kontaktmöglichkeiten für nicht-dringende Anfragen.
+* **Sprechzeiten:** Eine tabellarische Übersicht der Öffnungszeiten gibt dem Patienten Planungssicherheit.
+* **Anfahrt/Parken:** Hinweise zur Erreichbarkeit mit öffentlichen Verkehrsmitteln oder PKW (Parkplatzsituation) sind hier integriert.
 
 ---
 
-## 4. Interaktive Overlay-Elemente
+## 4. Technische Grundlagen und UX-Verhalten
 
-### 4.1. Termin-Modal (Popup)
-Über den Button "Terminvereinbarung" in der Sidebar öffnet sich ein modales Fenster, das den Hintergrund abdunkelt.
-* **Funktion:** Der Nutzer muss zunächst seinen Versicherungsstatus wählen (Gesetzlich vs. Privat/Selbstzahler), um zum korrekten Buchungsprozess weitergeleitet zu werden.
-* **Design:** Klare, große Klickflächen mit Pfeil-Icons, die beim Überfahren (Hover) animiert werden.
+### 4.1. Performance & Ladezeiten
+Die Anwendung ist auf schnelle Ladezeiten optimiert. Bilder (insbesondere die Mitarbeiter- und Gerätefotos) sind so eingebunden, dass sie eine hohe visuelle Qualität bieten, ohne die Bandbreite unnötig zu belasten. Dies ist besonders wichtig für Nutzer, die mobil oder mit schlechter Internetverbindung auf die Seite zugreifen.
 
-### 4.2. Cookie-Layer
-Beim ersten Aufruf der Seite erscheint am unteren Bildschirmrand ein fixierter Hinweis zur Datennutzung.
-* **Optionen:** Der Nutzer kann "Alle akzeptieren" oder "Anpassen" wählen. Das Layer bleibt bestehen, bis eine Aktion erfolgt.
+### 4.2. Navigationsfluss & Usability
+* **Intuitive Pfade:** Der Nutzer muss nie mehr als 2-3 Klicks tätigen, um von der Startseite zu einer spezifischen Information (z.B. "Wie bereite ich mich auf ein MRT vor?") zu gelangen.
+* **Konsistenter Footer:** Am Ende jeder Seite befindet sich ein Fußbereich (Footer), der rechtliche Pflichtangaben (**Impressum, Datenschutz**) sowie wiederkehrende Kontakt-Kurzinfos enthält. Dies bildet einen vertrauten Abschluss jeder Seite.
 
----
-
-## 5. Technische Merkmale aus Nutzersicht
-
-* **Geschwindigkeit:** Da alle Inhalte initial geladen werden, erfolgt der Wechsel zwischen den Menüpunkten verzögerungsfrei (Instant-Navigation).
-* **Ikonografie:** Die Anwendung nutzt konsistente Icons (Lucide-Set) zur visuellen Unterstützung von Textinhalten (z.B. Telefonhörer, Kalender, Warndreiecke), was die Erfassbarkeit von Informationen erhöht.
-* **Typografie:** Die verwendete Schriftart "Arimo" sorgt für ein klares, gut lesbares Schriftbild, das dem medizinischen Kontext angemessen ist.
-* **Barrierefreiheit (Ansätze):** Hohe Kontraste (Rot/Weiß/Dunkelgrau), klare Fokus-Zustände und semantisches HTML unterstützen die Bedienbarkeit.
+### 4.3. Datenschutz & Sicherheit
+Da es sich um eine medizinische Webseite handelt, wird auf die Datensparsamkeit geachtet. Es werden keine unnötigen Nutzerdaten im Hintergrund gesammelt. Externe Inhalte (wie Kartenmaterial) sind so integriert, dass sie den aktuellen Datenschutzrichtlinien entsprechen.
 
 ---
 
-## 6. Zusammenfassung
-Die Anwendung präsentiert die Klinik für Radiologie und Nuklearmedizin als hochmoderne, serviceorientierte Abteilung. Durch die klare Trennung von Patienten- und Zuweiser-Informationen sowie die intuitiven Filter- und Navigationsmöglichkeiten findet jeder Nutzer schnell die für ihn relevante Information – sei es die Vorbereitung auf ein MRT, die Telefonnummer für einen Notfallbefund oder der Weg zur Klinik.
+## 5. Zusammenfassung
+Die Anwendung **Radiologie St. Georg** präsentiert sich im aktuellen Zustand als moderne, vollständig responsive und inhaltlich tiefe Webpräsenz. Sie transformiert die physische Praxis in den digitalen Raum, indem sie nicht nur informiert, sondern durch Transparenz und persönliche Vorstellung des Teams aktiv Vertrauen beim Patienten aufbaut. Die klare Trennung zwischen allgemeiner Radiologie und spezialisierter Nuklearmedizin bei gleichzeitiger Wahrung einer einheitlichen Designsprache ist das architektonische Hauptmerkmal dieser Lösung.
