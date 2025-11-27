@@ -109,8 +109,9 @@
                     { title: 'Kinderradiologie', desc: 'Kindgerechte Diagnostik: Ultraschall, Low-Dose Röntgen und spezielle MRT/CT-Protokolle.', targetView: 'services', filterId: 'kinder', img: 'image/Kinderradiologie.jpg' }
                 ],
 
+                // ERWEITERTES & OPTIMIERTES LEISTUNGSSPEKTRUM
                 services: [
-                    // MRT / CT / Standard
+                    // --- MRT ---
                     { 
                         id: 1, 
                         title: 'Magnetresonanztomographie (MRT)', 
@@ -283,10 +284,63 @@
                     }
                 ],
 
-                nuclearFaqs: [
-                    { q: 'Was ist eine Szintigraphie?', a: 'Bei einer Szintigraphie wird eine schwach radioaktive Substanz verabreicht, die sich in bestimmten Organen (z.B. Schilddrüse, Knochen, Herz) anreichert. Eine spezielle Kamera misst die Strahlung und erstellt ein Bild der Organfunktion.' },
-                    { q: 'Ist die Strahlung gefährlich?', a: 'Die verwendete Strahlendosis ist sehr gering und vergleichbar mit oder oft niedriger als bei Röntgenuntersuchungen. Die Substanzen werden vom Körper schnell wieder ausgeschieden oder abgebaut.' },
-                    { q: 'Wie muss ich mich vorbereiten?', a: 'Für eine Schilddrüsenszintigraphie müssen Sie nicht nüchtern sein. Bringen Sie bitte Ihre Versichertenkarte, den Überweisungsschein und aktuelle Laborwerte (TSH) mit.' }
+                nuclearDetails: [
+                    {
+                        title: 'Schilddrüse (Sonographie & Szintigraphie)',
+                        desc: 'Beurteilung von Struktur (Knoten, Vergrößerung) und Funktion (kalte/heiße Knoten).',
+                        duration: 'ca. 1 Std.',
+                        prep: 'Nicht nüchtern. Jodhaltige Med. & Kontrastmittel beachten.',
+                        content: 'Bei der Sonographie werden Strukturveränderungen untersucht. Die Szintigraphie dient der Funktionsbeurteilung (z.B. Unterscheidung kalter/heißer Knoten). Ablauf: Injektion einer schwach radioaktiven Substanz, nach ca. 15 Min. Aufnahme.'
+                    },
+                    {
+                        title: 'Skelettszintigraphie',
+                        desc: 'Darstellung des Knochenstoffwechsels (Metastasen, Entzündungen, Prothesenlockerung).',
+                        duration: '4-5 Std. (inkl. Pause)',
+                        prep: 'Nicht nüchtern. Viel trinken (1L) in der Wartezeit.',
+                        content: 'Frühzeitiger Nachweis krankhafter Veränderungen im Vergleich zum Röntgen. Ablauf: Injektion, ca. 3 Std. Wartezeit (Anreicherung), Aufnahme an der Gammakamera. Mehrphasentechnik bei Entzündungsfragen möglich.'
+                    },
+                    {
+                        title: 'Nierenszintigraphie (MAG-3)',
+                        desc: 'Beurteilung der seitengetrennten Nierenfunktion und des Harnabflusses.',
+                        duration: 'ca. 1,5 Std.',
+                        prep: 'Nicht nüchtern. Vorher gut trinken.',
+                        content: 'Dynamische Untersuchung, auch bei Kindern möglich. Ablauf: Injektion, 20-40 Min. Aufnahme, ggf. Gabe eines Diuretikums (Wassertablette) zur Anregung der Ausscheidung.'
+                    },
+                    {
+                        title: 'Myokardszintigraphie (Herz)',
+                        desc: 'Beurteilung der Herzdurchblutung unter Belastung und in Ruhe.',
+                        duration: '2-3 Std. pro Termin (2 Termine)',
+                        prep: 'Nüchtern (4h), kein Koffein (12h), fetthaltige Mahlzeit mitbringen.',
+                        content: 'Erkennung von Durchblutungsstörungen (KHK). Besteht aus Belastungs- und Ruheuntersuchung (meist an zwei Tagen). Schonende Alternative zum Herzkatheter.'
+                    },
+                    {
+                        title: 'Lungenszintigraphie',
+                        desc: 'Untersuchung der Belüftung und Durchblutung (z.B. bei Embolieverdacht).',
+                        duration: '1,5 - 2 Std.',
+                        prep: 'Nicht nüchtern.',
+                        content: 'Kombination aus Inhalation (Ventilation) und Injektion (Perfusion). Auch bei Niereninsuffizienz oder KM-Allergie möglich.'
+                    },
+                    {
+                        title: 'Wächterlymphknoten (Sentinel)',
+                        desc: 'Markierung des ersten Lymphknotens im Abstromgebiet eines Tumors vor OP.',
+                        duration: 'ca. 4 Std.',
+                        prep: 'Nicht nüchtern.',
+                        content: 'Wichtig bei Brustkrebs oder Melanom. Injektion um den Tumor, nach 2-4 Std. Aufnahme. Dient der gezielten operativen Entfernung am Folgetag.'
+                    },
+                    {
+                        title: 'DaTSCAN (Parkinson-Diagnostik)',
+                        desc: 'Unterscheidung zwischen Parkinson-Syndromen und essenziellem Tremor.',
+                        duration: 'ca. 5 Std.',
+                        prep: 'Nicht nüchtern. Schilddrüsenblockade vorab nötig.',
+                        content: 'Darstellung der Dopamin-Transporter im Gehirn. Wichtig: Bei Absage < 72h fallen Kosten für das speziell bestellte Medikament an.'
+                    },
+                    {
+                        title: 'PET/CT (FDG & PSMA)',
+                        desc: 'Hochmoderne Hybridbildgebung für Onkologie, Neurologie und Entzündungen.',
+                        duration: '2-4 Std.',
+                        prep: 'FDG: Nüchtern (12h)! PSMA: Nicht nüchtern.',
+                        content: 'Kombination aus Stoffwechsel- (PET) und Strukturbildgebung (CT). PSMA-PET speziell für Prostatakarzinom. FDG-PET für viele andere Tumore und Entzündungen. Achtung: Strenge Absagefristen aufgrund der teuren, kurzlebigen Substanzen.'
+                    }
                 ],
 
                 // TEAM
@@ -346,7 +400,7 @@
                         this.breadcrumb = item.label;
                     } else if (viewName === 'referrers') {
                         this.breadcrumb = 'Für Zuweiser';
-                    } else if (viewName === 'career') { // Fallback für Karriere Breadcrumb
+                    } else if (viewName === 'career') {
                         this.breadcrumb = 'Karriere';
                     } else {
                         this.breadcrumb = 'Startseite';
@@ -569,76 +623,99 @@
                     <div class="mb-6 bg-gray-100 p-1 border border-gray-200">
                         <img src="image/St_Georg_Nuklearmedizin_web.jpg" alt="Nuklearmedizin" class="w-full h-auto block">
                     </div>
+                    
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6">
+                         <h3 class="!mt-0 text-base font-bold text-yellow-800 mb-2">Aktuelle Hinweise</h3>
+                         <p class="text-sm text-yellow-800">
+                             <strong>Wegeführung zum Haus 21:</strong> Derzeit gelangen Sie über den Eingang des Haus 20 und anschließend durch das Untergeschoss zu unserer Abteilung der Nuklearmedizin ins Haus 21. Folgen Sie vor Ort bitte der Ausschilderung!
+                         </p>
+                    </div>
 
                     <div class="content-box">
                         <p class="font-bold text-lg mb-4">
-                            Die Nuklearmedizin ist ein eigenständiges medizinisches Fachgebiet, das sich mit der Anwendung von offenen radioaktiven Stoffen in Diagnostik und Therapie beschäftigt.
+                            Abteilung Nuklearmedizin
                         </p>
                         <p class="mb-4">
-                            Im Gegensatz zur Radiologie, die überwiegend morphologische (strukturelle) Veränderungen darstellt, bildet die Nuklearmedizin funktionelle Vorgänge (Stoffwechsel) ab. 
-                            Wir verfügen über eine moderne Doppelkopf-Gammakamera sowie ein <strong>SPECT/CT-Hybridsystem (Symbia T6)</strong>, welches nuklearmedizinische Schnittbilder mit einer Computertomographie fusioniert. 
-                            Dies ermöglicht eine exakte anatomische Zuordnung funktioneller Befunde.
+                            In unserer Abteilung Nuklearmedizin bieten wir Ihnen hochmoderne diagnostische Leistungen auf dem Gebiet der nuklearmedizinischen Bildgebung an. Mit unseren spezialisierten Hybrid-Geräten für PET/CT und SPECT/CT (Symbia T6) der neusten Generation, können wir nach Verabreichung von spezifischen, schwach radioaktiven Substanzen präzise Einblicke in den Stoffwechsel und die Funktion von Organen und Geweben geben.
+                        </p>
+                        <p class="mb-4">
+                            In unserer <strong>nuklearmedizinischen Ambulanz</strong> können nuklearmedizinische Untersuchungen auch ambulant für gesetzlich und privat Versicherte erfolgen. Zudem verfügen wir über die <strong>Therapiestation 20</strong> für Radiojodtherapien.
                         </p>
                     </div>
 
                     <!-- Zwei Spalten: Diagnostik & Therapie -->
                     <div class="grid md:grid-cols-2 gap-8 mb-8">
-                        
-                        <!-- Therapie -->
-                        <div class="bg-white border border-[#e5e5e5] p-6">
-                            <h3 class="!mt-0 text-primary border-b border-[#ddd] pb-2 mb-4 flex items-center gap-2">
-                                <i data-lucide="flask-conical" class="w-5 h-5"></i> Therapie-Schwerpunkte
-                            </h3>
-                            <ul class="space-y-3 text-sm text-[#333]">
-                                <li>
-                                    <strong>Schilddrüsenerkrankungen:</strong><br>
-                                    Radioiodtherapie bei gutartigen (Knoten, Basedow) und bösartigen Erkrankungen auf unserer <span class="text-primary font-bold">Therapiestation (Station 20)</span>.
-                                </li>
-                                <li>
-                                    <strong>Gelenkerkrankungen:</strong><br>
-                                    Radiosynoviorthese (RSO) bei schmerzhaften entzündlichen Gelenkprozessen (z.B. Rheuma, Arthrose).
-                                </li>
-                                <li>
-                                    <strong>Lebertumore:</strong><br>
-                                    SIRT (Selektive Interne Radiotherapie) zur lokalen Behandlung von Lebermetastasen oder Leberzellkarzinomen.
-                                </li>
-                                <li>
-                                    <strong>Schmerztherapie:</strong><br>
-                                    Palliative Behandlung von Knochenmetastasen (Samarium-153, Rhenium-186).
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Diagnostik -->
-                        <div class="bg-white border border-[#e5e5e5] p-6">
-                            <h3 class="!mt-0 text-primary border-b border-[#ddd] pb-2 mb-4 flex items-center gap-2">
-                                <i data-lucide="scan-eye" class="w-5 h-5"></i> Diagnostik-Spektrum
-                            </h3>
-                            <ul class="space-y-2 text-sm text-[#333] list-disc list-inside">
-                                <li><strong>Schilddrüse:</strong> Szintigraphie, Sonographie, Feinnadelpunktion</li>
-                                <li><strong>Skelett:</strong> Knochenszintigraphie (Entzündungen, Metastasen, Prothesenlockerung)</li>
-                                <li><strong>Herz:</strong> Myokardszintigraphie (Durchblutung, Vitalität)</li>
-                                <li><strong>Niere:</strong> Funktionsszintigraphie (Seitengetrennte Funktion, Abfluss)</li>
-                                <li><strong>Lunge:</strong> Perfusions- und Ventilationsszintigraphie (Embolieausschluss)</li>
-                                <li><strong>Gehirn:</strong> DaTSCAN (Parkinson-Diagnostik)</li>
-                                <li><strong>Wächterlymphknoten:</strong> Sentinel-Lymph-Node Szintigraphie (Mamma-Ca, Melanom)</li>
-                                <li><strong>Tumordiagnostik:</strong> MIBG-Szintigraphie, Somatostatinrezeptor-Szintigraphie</li>
-                            </ul>
+                        <!-- Linke Spalte: Leistungen Accordion -->
+                        <div class="md:col-span-2">
+                             <h3 class="!mt-0 text-primary border-b border-[#ddd] pb-2 mb-4">Unsere Leistungen umfassen</h3>
+                             
+                             <!-- Accordion -->
+                             <div class="space-y-2" x-data="{ openItem: null }">
+                                 <template x-for="(item, index) in nuclearDetails" :key="index">
+                                     <div class="border border-[#e5e5e5]">
+                                         <div 
+                                            class="bg-[#f9f9f9] px-4 py-3 cursor-pointer hover:bg-[#f0f0f0] flex justify-between items-center"
+                                            @click="openItem === index ? openItem = null : openItem = index"
+                                         >
+                                             <span class="font-bold text-[#333]" x-text="item.title"></span>
+                                             <i data-lucide="chevron-down" class="w-4 h-4 text-[#999] transition-transform" :class="{'rotate-180': openItem === index}"></i>
+                                         </div>
+                                         <div x-show="openItem === index" x-collapse class="p-5 bg-white text-sm text-[#333] border-t border-[#e5e5e5]">
+                                             <p class="mb-3 font-bold" x-text="item.desc"></p>
+                                             <p class="mb-4" x-text="item.content"></p>
+                                             
+                                             <div class="grid sm:grid-cols-2 gap-4 bg-[#f5f5f5] p-3 border-l-4 border-primary">
+                                                 <div><strong>Dauer:</strong> <span x-text="item.duration"></span></div>
+                                                 <div><strong>Vorbereitung:</strong> <span x-text="item.prep"></span></div>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </template>
+                             </div>
                         </div>
                     </div>
 
-                    <div class="clear-both pt-6 mt-6 border-t border-[#e5e5e5]">
-                        <h2>Häufige Fragen (FAQ)</h2>
-                        <div class="space-y-0 border border-[#e5e5e5]">
-                            <template x-for="(faq, idx) in nuclearFaqs" :key="idx">
-                                <div class="border-b border-[#e5e5e5] last:border-0">
-                                    <div class="bg-[#f9f9f9] px-4 py-3 text-sm font-bold cursor-pointer hover:bg-[#f0f0f0] flex justify-between items-center" @click="$el.nextElementSibling.classList.toggle('hidden')">
-                                        <span x-text="faq.q"></span>
-                                        <i data-lucide="chevron-down" class="w-4 h-4 text-[#999]"></i>
-                                    </div>
-                                    <div class="hidden p-4 bg-white text-sm text-[#666] border-t border-[#e5e5e5]"><span x-text="faq.a"></span></div>
-                                </div>
-                            </template>
+                    <div class="grid md:grid-cols-3 gap-8 mt-8 pt-6 border-t border-[#e5e5e5]">
+                        <!-- Anmeldeformulare -->
+                        <div class="md:col-span-2">
+                            <h3 class="!mt-0 text-[#333] mb-4">Anmeldung zur Untersuchung</h3>
+                            <p class="text-sm mb-4">
+                                Bitte nutzen Sie zur ambulanten Untersuchungsanmeldung unsere Anmeldeformulare und senden uns diese per E-Mail an <a href="mailto:nuklearmedizin@sanktgeorg.de" class="text-primary underline">nuklearmedizin@sanktgeorg.de</a> oder Fax an 0341-909 2871.
+                            </p>
+                            <ul class="space-y-2 text-sm">
+                                <li><a href="#" class="text-primary hover:underline flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> Untersuchungsanmeldung Schilddrüse</a></li>
+                                <li><a href="#" class="text-primary hover:underline flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> Untersuchungsanmeldung Szintigraphie & SPECT/CT</a></li>
+                                <li><a href="#" class="text-primary hover:underline flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> Untersuchungsanmeldung PET/CT</a></li>
+                                <li><a href="#" class="text-primary hover:underline flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4"></i> Untersuchungsanmeldung PSMA-PET/CT</a></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Kontakt Nuklearmedizin (Spezifisch) -->
+                        <div class="bg-[#f9f9f9] border border-[#e5e5e5] p-4">
+                             <h4 class="font-bold text-sm border-b border-[#ddd] pb-2 mb-3">Kontaktpersonen</h4>
+                             
+                             <div class="text-xs space-y-4">
+                                 <div>
+                                     <strong>Leiterin Nuklearmedizin</strong><br>
+                                     Dr. med. univ. Theresa Kluge<br>
+                                     Tel.: 0341 909-2870
+                                 </div>
+                                 <div>
+                                     <strong>Oberärztin</strong><br>
+                                     Prof. Dr. med. Regine Kluge<br>
+                                     Tel.: 0341 909-2870
+                                 </div>
+                                 <div>
+                                     <strong>Funktionsoberarzt</strong><br>
+                                     Dr. med. Enrico Nickel<br>
+                                     Tel.: 0341 909-2870
+                                 </div>
+                                 <div>
+                                     <strong>Leitender MTR</strong><br>
+                                     Christian Gottschalk<br>
+                                     Tel.: 0341 909-2870
+                                 </div>
+                             </div>
                         </div>
                     </div>
                 </div>
