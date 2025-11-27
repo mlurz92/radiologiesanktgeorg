@@ -109,25 +109,179 @@
                     { title: 'Kinderradiologie', desc: 'Kindgerechte Diagnostik: Ultraschall, Low-Dose Röntgen und spezielle MRT/CT-Protokolle.', targetView: 'services', filterId: 'kinder', img: 'image/Kinderradiologie.jpg' }
                 ],
 
+                // ERWEITERTES & OPTIMIERTES LEISTUNGSSPEKTRUM
                 services: [
-                    // MRT / CT / Standard
-                    { id: 1, title: 'Magnetresonanztomographie (MRT)', category: 'mrt', icon: 'activity', description: 'Wir betreiben zwei hochmoderne MRT-Systeme (1.5 Tesla und 3 Tesla). Diese ermöglichen eine strahlenfreie Darstellung von Gehirn, Wirbelsäule, Gelenken, Bauchorganen und Gefäßen in höchster Auflösung.', duration: '20-45 Min', prep: 'Metallteile ablegen, ggf. Nierenwerte' },
-                    { id: 2, title: 'Computertomographie (CT)', category: 'ct', icon: 'layers', description: 'Mit unserem Dual-Source-CT führen wir ultraschnelle Untersuchungen durch. Schwerpunkte sind die Herzdiagnostik (Cardio-CT), die Tumordiagnostik sowie die Notfallversorgung von Unfallopfern.', duration: '5-10 Min', prep: 'Nüchtern (3h), aktuelle TSH/Krea-Werte' },
-                    { id: 3, title: 'Digitale Mammographie', category: 'mammo', icon: 'user', description: 'Als Teil des zertifizierten Brustzentrums bieten wir digitale Vollfeldmammographie mit Tomosynthese an. Dies ermöglicht eine 3D-Schichtbildgebung der Brust zur sicheren Erkennung kleinster Veränderungen.', duration: '15 Min', prep: 'Bitte keine Deos oder Puder verwenden' },
-                    { id: 4, title: 'Konventionelles Röntgen', category: 'xray', icon: 'image', description: 'Unsere volldigitalen Röntgenarbeitsplätze garantieren eine minimale Strahlenbelastung bei maximaler Bildqualität. Die Bilder stehen den behandelnden Ärzten sofort digital zur Verfügung.', duration: '5 Min', prep: 'Keine spezielle Vorbereitung' },
-                    
-                    // Intervention
-                    { id: 5, title: 'Gefäßinterventionen (Angiographie)', category: 'intervention', icon: 'crosshair', description: 'Minimal-invasive Therapie von Gefäßerkrankungen mittels Kathetertechnik (PTA, Stents, Aneurysma-Verschluss).', duration: '30-90 Min', prep: 'Stationäre Aufnahme i.d.R. erforderlich' },
-                    { id: 6, title: 'Schmerztherapie (PRT)', category: 'intervention', icon: 'target', description: 'Periradikuläre Therapie (PRT): CT-gesteuerte Injektion an die Nervenwurzel bei Bandscheibenvorfällen.', duration: '10-15 Min', prep: 'Keine Blutverdünner, Fahrer organisieren' },
-                    { id: 7, title: 'Facetten- & ISG-Infiltration', category: 'intervention', icon: 'target', description: 'Gezielte Behandlung von Rückenschmerzen durch Infiltration der kleinen Wirbelgelenke.', duration: '10-15 Min', prep: 'Keine Blutverdünner' },
-                    { id: 8, title: 'Gelenkembolisation', category: 'intervention', icon: 'circle-off', description: 'Innovatives Verfahren zur Schmerzbehandlung bei chronischen Gelenkerkrankungen (z.B. Kniearthrose, Frozen Shoulder).', duration: '45-60 Min', prep: 'Vorgespräch nötig' },
-                    { id: 9, title: 'Interventionelle Tumortherapie', category: 'intervention', icon: 'zap', description: 'Lokal ablative Verfahren (TACE, SIRT, MWA) bei Lebertumoren und Metastasen.', duration: 'Individuell', prep: 'Interdisziplinäre Tumorkonferenz' },
+                    // --- MRT ---
+                    { 
+                        id: 1, 
+                        title: 'Magnetresonanztomographie (MRT)', 
+                        category: 'mrt', 
+                        icon: 'activity', 
+                        description: 'Wir betreiben zwei hochmoderne MRT-Systeme (1.5 Tesla und 3 Tesla) für präzise Diagnostik ohne Strahlenbelastung.', 
+                        duration: '20-45 Min', 
+                        prep: 'Metallteile ablegen, ggf. aktuelle Nierenwerte',
+                        details: 'Unser Leistungsspektrum umfasst die hochauflösende Darstellung von Gehirn und Rückenmark (Neuro-MRT), des muskuloskelettalen Systems (Gelenke, Wirbelsäule), der Bauchorgane (Leber, Pankreas, Nieren) sowie Spezialuntersuchungen wie MR-Angiographie (Gefäße), Kardio-MRT (Herz) und Multiparametrische Prostata-MRT.'
+                    },
+                    {
+                        id: 101,
+                        title: 'Multiparametrische Prostata-MRT',
+                        category: 'mrt',
+                        icon: 'scan',
+                        description: 'Spezialisierte Diagnostik zur Früherkennung und Abklärung von Prostatakrebs gemäß PIRADS-Leitlinien.',
+                        duration: '40 Min',
+                        prep: 'Spezielle Vorbereitung (Merkblatt)',
+                        details: 'Hochauflösende Bildgebung zur exakten Lokalisation verdächtiger Areale. Dient oft als Grundlage für eine gezielte Fusionsbiopsie.'
+                    },
+                    {
+                        id: 102,
+                        title: 'Kardio-MRT (Herz-MRT)',
+                        category: 'mrt',
+                        icon: 'heart-pulse',
+                        description: 'Goldstandard zur Beurteilung der Herzfunktion, Morphologie und Vitalität des Herzmuskels.',
+                        duration: '45-60 Min',
+                        prep: 'Kein Koffein (24h)',
+                        details: 'Untersuchung bei Verdacht auf Myokarditis, Kardiomyopathien, Ischämie (Stress-MRT) oder Herzklappenfehlern. Völlig strahlenfrei.'
+                    },
 
-                    // Kinderradiologie
-                    { id: 10, title: 'Kinderultraschall (Sonographie)', category: 'kinder', icon: 'waves', description: 'Komplett strahlenfreie Diagnostik vom Säugling bis zum Jugendlichen. Untersuchung von Bauchorganen, Hüfte, Gehirn (Säuglinge) und Weichteilen.', duration: '15-30 Min', prep: 'Ggf. nüchtern (Bauch)' },
-                    { id: 11, title: 'Durchleuchtung bei Kindern', category: 'kinder', icon: 'monitor', description: 'Dynamische Untersuchungen, z.B. des Magen-Darm-Traktes oder der Harnwege (MCU), unter strengster Indikationsstellung und Dosisminimierung.', duration: '30 Min', prep: 'Nach Absprache' },
-                    { id: 12, title: 'Röntgen bei Kindern (Low-Dose)', category: 'kinder', icon: 'image', description: 'Digitales Röntgen mit speziellen Kinderfiltern und minimaler Dosis. Kindgerechte Atmosphäre und erfahrenes Personal.', duration: '5-10 Min', prep: 'Keine' },
-                    { id: 13, title: 'Kinder-MRT & CT (Schnittbild)', category: 'kinder', icon: 'layers', description: 'Schnittbilddiagnostik (MRT strahlenfrei) mit angepassten Protokollen für Kinder. Bei Bedarf in Sedierung (in Kooperation mit der Kinderklinik).', duration: '20-45 Min', prep: 'Absprache erforderlich' }
+                    // --- CT ---
+                    { 
+                        id: 2, 
+                        title: 'Computertomographie (CT)', 
+                        category: 'ct', 
+                        icon: 'layers', 
+                        description: 'Ultraschnelle Schnittbildgebung mit Dual-Source-Technologie für präzise Diagnosen bei minimaler Dosis.', 
+                        duration: '5-10 Min', 
+                        prep: 'Nüchtern (3h), aktuelle TSH/Krea-Werte',
+                        details: 'Wir decken das gesamte Spektrum der CT-Diagnostik ab: Von der Polytrauma-Versorgung im Schockraum über die Tumordiagnostik (Staging) von Thorax und Abdomen bis hin zu speziellen Gefäßdarstellungen (CT-Angiographie) und der Herz-CT (Kalkscoring, Koronar-CT).' 
+                    },
+                    {
+                        id: 201,
+                        title: 'Herz-CT / Cardio-CT',
+                        category: 'ct',
+                        icon: 'heart',
+                        description: 'Nicht-invasive Darstellung der Herzkranzgefäße zum Ausschluss einer koronaren Herzkrankheit (KHK).',
+                        duration: '15 Min',
+                        prep: 'Pulsregulierung ggf. notwendig',
+                        details: 'Ermöglicht den Ausschluss relevanter Gefäßverengungen ohne Herzkatheter. Inklusive Calcium-Scoring zur Risikoabschätzung.'
+                    },
+
+                    // --- Mammographie ---
+                    { 
+                        id: 3, 
+                        title: 'Digitale Mammographie & Tomosynthese', 
+                        category: 'mammo', 
+                        icon: 'user', 
+                        description: 'Zertifiziertes Brustzentrum: Digitale Vollfeldmammographie inklusive 3D-Schichtbildgebung (Tomosynthese).', 
+                        duration: '15 Min', 
+                        prep: 'Bitte keine Deos oder Puder verwenden',
+                        details: 'Höchste diagnostische Sicherheit durch 3D-Technik, besonders bei dichtem Drüsengewebe. Ergänzend bieten wir hochauflösenden Mamma-Ultraschall und MR-Mammographie an. Bei auffälligen Befunden führen wir minimal-invasive Vakuumbiopsien durch.' 
+                    },
+
+                    // --- Röntgen ---
+                    { 
+                        id: 4, 
+                        title: 'Konventionelles Röntgen', 
+                        category: 'xray', 
+                        icon: 'image', 
+                        description: 'Volldigitale Direkttadiographie für Skelett- und Thoraxdiagnostik mit minimaler Strahlenbelastung.', 
+                        duration: '5 Min', 
+                        prep: 'Keine spezielle Vorbereitung',
+                        details: 'Sofortige digitale Verfügbarkeit der Bilder für die weiterbehandelnden Kliniken. Einsatz modernster Flachdetektoren für optimale Bildqualität.'
+                    },
+
+                    // --- Intervention ---
+                    { 
+                        id: 5, 
+                        title: 'Gefäßinterventionen (Angiographie)', 
+                        category: 'intervention', 
+                        icon: 'crosshair', 
+                        description: 'Minimal-invasive Therapie von Gefäßerkrankungen mittels Kathetertechnik in unserer DSA-Anlage.', 
+                        duration: '30-90 Min', 
+                        prep: 'Stationäre Aufnahme i.d.R. erforderlich',
+                        details: 'Behandlung der Schaufensterkrankheit (pAVK) durch Ballondilatation (PTA) und Stentimplantation. Notfallversorgung bei akuten Gefäßverschlüssen oder Blutungen.' 
+                    },
+                    { 
+                        id: 6, 
+                        title: 'CT-gesteuerte Schmerztherapie (PRT)', 
+                        category: 'intervention', 
+                        icon: 'target', 
+                        description: 'Periradikuläre Therapie (PRT): Millimetergenaue Injektion an die Nervenwurzel bei Bandscheibenvorfällen.', 
+                        duration: '10-15 Min', 
+                        prep: 'Keine Blutverdünner, Fahrer organisieren',
+                        details: 'Gezielte Applikation von entzündungshemmenden und schmerzstillenden Medikamenten direkt an den Ort der Schmerzentstehung. Ambulant durchführbar.' 
+                    },
+                    { 
+                        id: 7, 
+                        title: 'Facetten- & ISG-Infiltration', 
+                        category: 'intervention', 
+                        icon: 'target', 
+                        description: 'Behandlung von Rückenschmerzen durch Infiltration der kleinen Wirbelgelenke oder des Iliosakralgelenks.', 
+                        duration: '10-15 Min', 
+                        prep: 'Keine Blutverdünner',
+                        details: 'Effektive Therapie bei verschleißbedingten Rückenschmerzen (Facettensyndrom). Durchführung unter CT-Kontrolle für höchste Präzision.' 
+                    },
+                    { 
+                        id: 8, 
+                        title: 'Gelenkembolisation (TAME)', 
+                        category: 'intervention', 
+                        icon: 'circle-off', 
+                        description: 'Innovatives Verfahren gegen chronische Gelenkschmerzen (z.B. Kniearthrose, Frozen Shoulder).', 
+                        duration: '45-60 Min', 
+                        prep: 'Vorgespräch nötig',
+                        details: 'Durch den Verschluss kleinster krankhafter Blutgefäße ("Neovaskularisation") wird die Entzündung im Gelenk reduziert und der Schmerz gelindert. Schonende Alternative zur OP.' 
+                    },
+                    { 
+                        id: 9, 
+                        title: 'Interventionelle Tumortherapie', 
+                        category: 'intervention', 
+                        icon: 'zap', 
+                        description: 'Lokal ablative und intraarterielle Verfahren zur Behandlung von Lebertumoren und Metastasen.', 
+                        duration: 'Individuell', 
+                        prep: 'Interdisziplinäre Tumorkonferenz',
+                        details: 'Einsatz von Hitze (Mikrowellenablation MWA), Kälte oder direkter Chemotherapie-Gabe in das Tumor-gefäß (TACE, SIRT) zur Zerstörung von Tumorgewebe.' 
+                    },
+
+                    // --- Kinderradiologie ---
+                    { 
+                        id: 10, 
+                        title: 'Kinderultraschall (Sonographie)', 
+                        category: 'kinder', 
+                        icon: 'waves', 
+                        description: 'Strahlenfreie Diagnostik vom Säugling bis zum Jugendlichen in kindgerechter Atmosphäre.', 
+                        duration: '15-30 Min', 
+                        prep: 'Ggf. nüchtern (Bauch)',
+                        details: 'Schmerzfreie Untersuchung von Bauchorganen, Nieren/Harnwegen, Hüfte (Säuglingsscreening), Gehirn (durch die Fontanelle) und Weichteilen.' 
+                    },
+                    { 
+                        id: 11, 
+                        title: 'Durchleuchtung bei Kindern', 
+                        category: 'kinder', 
+                        icon: 'monitor', 
+                        description: 'Funktionsuntersuchungen wie MCU (Miktionszystourethrogramm) oder Magen-Darm-Passage.', 
+                        duration: '30 Min', 
+                        prep: 'Nach Absprache',
+                        details: 'Durchführung unter strengster Indikationsstellung und Dosisminimierung (gepulste Durchleuchtung) zur Abklärung von Reflux oder Fehlbildungen.' 
+                    },
+                    { 
+                        id: 12, 
+                        title: 'Röntgen bei Kindern (Low-Dose)', 
+                        category: 'kinder', 
+                        icon: 'image', 
+                        description: 'Digitales Röntgen mit speziellen Kinderfiltern und minimaler Dosis.', 
+                        duration: '5-10 Min', 
+                        prep: 'Keine',
+                        details: 'Erfahrenes Personal und kindgerechte Einstelltechniken sorgen für optimale Bilder bei geringstmöglicher Strahlenbelastung.' 
+                    },
+                    { 
+                        id: 13, 
+                        title: 'Kinder-MRT & CT', 
+                        category: 'kinder', 
+                        icon: 'layers', 
+                        description: 'Schnittbilddiagnostik mit speziellen pädiatrischen Protokollen (Low-Dose CT / schnelles MRT).', 
+                        duration: '20-45 Min', 
+                        prep: 'Absprache erforderlich (ggf. Sedierung)',
+                        details: 'Wenn möglich, bevorzugen wir das strahlenfreie MRT. Bei Kleinkindern bieten wir Untersuchungen in Sedierung in enger Kooperation mit der Klinik für Kinder- und Jugendmedizin an.' 
+                    }
                 ],
 
                 nuclearFaqs: [
@@ -390,6 +544,9 @@
                                     <div class="flex-grow">
                                         <h3 class="!mt-0 !mb-2 text-lg" x-text="service.title"></h3>
                                         <p class="text-sm text-[#666] mb-3" x-text="service.description"></p>
+                                        <!-- Detail-Beschreibung -->
+                                        <div class="text-sm text-[#555] mb-3" x-text="service.details"></div>
+                                        
                                         <div class="bg-[#f5f5f5] p-3 text-xs text-[#333] border-l-2 border-primary">
                                             <div class="grid sm:grid-cols-2 gap-2">
                                                 <div><strong>Dauer:</strong> <span x-text="service.duration"></span></div>
@@ -434,7 +591,7 @@
                         Wir möchten Ihren Aufenthalt in unserer Klinik so angenehm wie möglich gestalten. Hier finden Sie alle wichtigen Informationen zur Vorbereitung und zum Ablauf.
                     </p>
 
-                    <!-- WICHTIGER HINWEIS (NEU) -->
+                    <!-- WICHTIGER HINWEIS -->
                     <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 text-sm text-blue-800">
                         <strong>Bitte beachten:</strong> Wir bitten Sie, ca. 15 Minuten vor Ihrem Termin zu erscheinen und sich an der Anmeldung zu melden.
                     </div>
@@ -804,6 +961,7 @@
                                 <p class="font-bold text-sm mb-1">Klinikum St. Georg gGmbH</p>
                                 <p class="text-sm mb-4">
                                     Klinik für Radiologie und Nuklearmedizin<br>
+                                    Haus 20<br>
                                     Delitzscher Straße 141<br>
                                     04129 Leipzig
                                 </p>
