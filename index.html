@@ -109,9 +109,8 @@
                     { title: 'Kinderradiologie', desc: 'Kindgerechte Diagnostik: Ultraschall, Low-Dose Röntgen und spezielle MRT/CT-Protokolle.', targetView: 'services', filterId: 'kinder', img: 'image/Kinderradiologie.jpg' }
                 ],
 
-                // ERWEITERTES & OPTIMIERTES LEISTUNGSSPEKTRUM
                 services: [
-                    // --- MRT ---
+                    // MRT / CT / Standard
                     { 
                         id: 1, 
                         title: 'Magnetresonanztomographie (MRT)', 
@@ -565,11 +564,69 @@
                 <!-- VIEW: NUKLEARMEDIZIN -->
                 <div x-show="currentView === 'nuclear'" x-cloak>
                     <h1>Nuklearmedizin</h1>
-                    <div class="float-right ml-6 mb-6 w-1/3 border border-[#e5e5e5] p-1 bg-white">
-                        <img src="image/csm_St_Georg_Nuklearmedizin-0457_web_header_381c026a03.jpg" alt="Nuklearmedizin Labor" class="w-full h-auto">
+                    
+                    <!-- Hero Nuklearmedizin -->
+                    <div class="mb-6 bg-gray-100 p-1 border border-gray-200">
+                        <img src="image/St_Georg_Nuklearmedizin_web.jpg" alt="Nuklearmedizin" class="w-full h-auto block">
                     </div>
-                    <p class="font-bold">Funktionsdiagnostik auf höchstem Niveau.</p>
-                    <p>Die Nuklearmedizin ermöglicht es, Stoffwechselvorgänge im Körper sichtbar zu machen. Ein Schwerpunkt ist die Schilddrüsendiagnostik.</p>
+
+                    <div class="content-box">
+                        <p class="font-bold text-lg mb-4">
+                            Die Nuklearmedizin ist ein eigenständiges medizinisches Fachgebiet, das sich mit der Anwendung von offenen radioaktiven Stoffen in Diagnostik und Therapie beschäftigt.
+                        </p>
+                        <p class="mb-4">
+                            Im Gegensatz zur Radiologie, die überwiegend morphologische (strukturelle) Veränderungen darstellt, bildet die Nuklearmedizin funktionelle Vorgänge (Stoffwechsel) ab. 
+                            Wir verfügen über eine moderne Doppelkopf-Gammakamera sowie ein <strong>SPECT/CT-Hybridsystem (Symbia T6)</strong>, welches nuklearmedizinische Schnittbilder mit einer Computertomographie fusioniert. 
+                            Dies ermöglicht eine exakte anatomische Zuordnung funktioneller Befunde.
+                        </p>
+                    </div>
+
+                    <!-- Zwei Spalten: Diagnostik & Therapie -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        
+                        <!-- Therapie -->
+                        <div class="bg-white border border-[#e5e5e5] p-6">
+                            <h3 class="!mt-0 text-primary border-b border-[#ddd] pb-2 mb-4 flex items-center gap-2">
+                                <i data-lucide="flask-conical" class="w-5 h-5"></i> Therapie-Schwerpunkte
+                            </h3>
+                            <ul class="space-y-3 text-sm text-[#333]">
+                                <li>
+                                    <strong>Schilddrüsenerkrankungen:</strong><br>
+                                    Radioiodtherapie bei gutartigen (Knoten, Basedow) und bösartigen Erkrankungen auf unserer <span class="text-primary font-bold">Therapiestation (Station 20)</span>.
+                                </li>
+                                <li>
+                                    <strong>Gelenkerkrankungen:</strong><br>
+                                    Radiosynoviorthese (RSO) bei schmerzhaften entzündlichen Gelenkprozessen (z.B. Rheuma, Arthrose).
+                                </li>
+                                <li>
+                                    <strong>Lebertumore:</strong><br>
+                                    SIRT (Selektive Interne Radiotherapie) zur lokalen Behandlung von Lebermetastasen oder Leberzellkarzinomen.
+                                </li>
+                                <li>
+                                    <strong>Schmerztherapie:</strong><br>
+                                    Palliative Behandlung von Knochenmetastasen (Samarium-153, Rhenium-186).
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Diagnostik -->
+                        <div class="bg-white border border-[#e5e5e5] p-6">
+                            <h3 class="!mt-0 text-primary border-b border-[#ddd] pb-2 mb-4 flex items-center gap-2">
+                                <i data-lucide="scan-eye" class="w-5 h-5"></i> Diagnostik-Spektrum
+                            </h3>
+                            <ul class="space-y-2 text-sm text-[#333] list-disc list-inside">
+                                <li><strong>Schilddrüse:</strong> Szintigraphie, Sonographie, Feinnadelpunktion</li>
+                                <li><strong>Skelett:</strong> Knochenszintigraphie (Entzündungen, Metastasen, Prothesenlockerung)</li>
+                                <li><strong>Herz:</strong> Myokardszintigraphie (Durchblutung, Vitalität)</li>
+                                <li><strong>Niere:</strong> Funktionsszintigraphie (Seitengetrennte Funktion, Abfluss)</li>
+                                <li><strong>Lunge:</strong> Perfusions- und Ventilationsszintigraphie (Embolieausschluss)</li>
+                                <li><strong>Gehirn:</strong> DaTSCAN (Parkinson-Diagnostik)</li>
+                                <li><strong>Wächterlymphknoten:</strong> Sentinel-Lymph-Node Szintigraphie (Mamma-Ca, Melanom)</li>
+                                <li><strong>Tumordiagnostik:</strong> MIBG-Szintigraphie, Somatostatinrezeptor-Szintigraphie</li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <div class="clear-both pt-6 mt-6 border-t border-[#e5e5e5]">
                         <h2>Häufige Fragen (FAQ)</h2>
                         <div class="space-y-0 border border-[#e5e5e5]">
