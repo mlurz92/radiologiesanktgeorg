@@ -102,7 +102,7 @@
                 ],
 
                 features: [
-                    { title: 'MRT & CT Diagnostik', desc: 'Hochauflösende Schnittbilddiagnostik (3 Tesla & Dual Source).', targetView: 'services', filterId: 'mrt', img: 'image/MRT und CT.jpg' },
+                    { title: 'MRT & CT Diagnostik', desc: 'Hochauflösende Schnittbilddiagnostik (3 Tesla & 128-Zeilen).', targetView: 'services', filterId: 'mrt', img: 'image/MRT und CT.jpg' },
                     { title: 'Interventionelle Therapie', desc: 'Minimal-invasive Verfahren: Schmerztherapie, Gefäßinterventionen, Tumortherapie.', targetView: 'services', filterId: 'intervention', img: 'image/Intervention.jpg' },
                     { title: 'Nuklearmedizin', desc: 'Funktionsdiagnostik, Szintigraphie und PET/CT.', targetView: 'nuclear', filterId: 'all', img: 'image/St_Georg_Nuklearmedizin_web.jpg' },
                     { title: 'Mammographie', desc: 'Zertifiziertes Brustzentrum Leipzig Nord.', targetView: 'services', filterId: 'mammo', img: 'image/Mammographie.jpg' },
@@ -110,36 +110,51 @@
                 ],
 
                 services: [
-                    // MRT / CT / Standard
+                    // MRT
                     { 
                         id: 1, 
-                        title: 'Magnetresonanztomographie (MRT)', 
+                        title: 'Allgemeine MRT (Kopf, Wirbelsäule, Abdomen)', 
                         category: 'mrt', 
                         icon: 'activity', 
-                        description: 'Wir betreiben zwei hochmoderne MRT-Systeme (1.5 Tesla und 3 Tesla) für präzise Diagnostik ohne Strahlenbelastung.', 
-                        duration: '20-45 Min', 
-                        prep: 'Metallteile ablegen, ggf. aktuelle Nierenwerte',
-                        details: 'Unser Leistungsspektrum umfasst die hochauflösende Darstellung von Gehirn und Rückenmark (Neuro-MRT), des muskuloskelettalen Systems (Gelenke, Wirbelsäule), der Bauchorgane (Leber, Pankreas, Nieren) sowie Spezialuntersuchungen wie MR-Angiographie (Gefäße), Kardio-MRT (Herz) und Multiparametrische Prostata-MRT.'
+                        description: 'Untersuchung von Gehirn, Rückenmark, Bauchorganen oder Gefäßen mittels Magnetfeld.', 
+                        prep: 'Metallteile ablegen, aktuelle GFR (bei KM-Gabe)',
+                        details: 'Wir nutzen modernste 1.5T und 3T Geräte. Bitte bringen Sie Implantatausweise mit.'
                     },
                     {
                         id: 101,
                         title: 'Multiparametrische Prostata-MRT',
                         category: 'mrt',
                         icon: 'scan',
-                        description: 'Spezialisierte Diagnostik zur Früherkennung und Abklärung von Prostatakrebs gemäß PIRADS-Leitlinien.',
-                        duration: '40 Min',
-                        prep: 'Spezielle Vorbereitung (Merkblatt)',
-                        details: 'Hochauflösende Bildgebung zur exakten Lokalisation verdächtiger Areale. Dient oft als Grundlage für eine gezielte Fusionsbiopsie.'
+                        description: 'Spezialdiagnostik zur Früherkennung und Abklärung von Prostatakrebs (PI-RADS).',
+                        prep: 'Mastdarmentleerung (Klistier), Fahrer organisieren',
+                        details: 'Hochauflösende Darstellung zur Lokalisation verdächtiger Areale, oft vor einer Biopsie. Wir verabreichen ein Medikament zur Ruhigstellung des Darms (Buscopan), daher ist Fahrtüchtigkeit eingeschränkt.'
                     },
                     {
-                        id: 102,
-                        title: 'Kardio-MRT (Herz-MRT)',
+                        id: 105,
+                        title: 'Dynamische Beckenboden-MRT (Defäkographie)',
                         category: 'mrt',
-                        icon: 'heart-pulse',
-                        description: 'Goldstandard zur Beurteilung der Herzfunktion, Morphologie und Vitalität des Herzmuskels.',
-                        duration: '45-60 Min',
-                        prep: 'Kein Koffein (24h)',
-                        details: 'Untersuchung bei Verdacht auf Myokarditis, Kardiomyopathien, Ischämie (Stress-MRT) oder Herzklappenfehlern. Völlig strahlenfrei.'
+                        icon: 'layers',
+                        description: 'Funktionsuntersuchung des Beckenbodens bei Entleerungsstörungen oder Senkungsbeschwerden.',
+                        prep: 'Mastdarmentleerung vor Untersuchung',
+                        details: 'Die Untersuchung erfolgt in Ruhe und unter Pressen, um die Bewegung der Beckenorgane sichtbar zu machen. Schmerzfrei und ohne Strahlenbelastung.'
+                    },
+                    {
+                        id: 106,
+                        title: 'Rektum-MRT',
+                        category: 'mrt',
+                        icon: 'scan',
+                        description: 'Hochauflösende Darstellung des Enddarms zur Tumordiagnostik und Staging.',
+                        prep: 'Mastdarmentleerung, Fahrer organisieren',
+                        details: 'Dient der exakten Planung von Operationen oder Therapien bei Enddarmkrebs. Gabe von Buscopan zur Darmberuhigung möglich (Fahruntüchtigkeit für ca. 2h).'
+                    },
+                    {
+                        id: 104,
+                        title: 'Hochaufgelöste Gelenkdiagnostik',
+                        category: 'mrt',
+                        icon: 'activity',
+                        description: 'Detailgenaue Darstellung von Knorpel, Bändern und Sehnen an allen Gelenken.',
+                        prep: 'Keine spezielle Vorbereitung',
+                        details: 'Spezielle Spulen für Hand, Fuß, Knie oder Schulter ermöglichen die Erkennung kleinster Verletzungen oder Abnutzungen.'
                     },
 
                     // --- CT ---
@@ -148,20 +163,18 @@
                         title: 'Computertomographie (CT)', 
                         category: 'ct', 
                         icon: 'layers', 
-                        description: 'Ultraschnelle Schnittbildgebung mit Dual-Source-Technologie für präzise Diagnosen bei minimaler Dosis.', 
-                        duration: '5-10 Min', 
-                        prep: 'Nüchtern (3h), aktuelle TSH/Krea-Werte',
-                        details: 'Wir decken das gesamte Spektrum der CT-Diagnostik ab: Von der Polytrauma-Versorgung im Schockraum über die Tumordiagnostik (Staging) von Thorax und Abdomen bis hin zu speziellen Gefäßdarstellungen (CT-Angiographie) und der Herz-CT (Kalkscoring, Koronar-CT).' 
+                        description: 'Schnelle Schichtbildgebung für Notfälle, Tumordiagnostik oder Lungenuntersuchungen.', 
+                        prep: 'Nüchtern (3h), aktuelle TSH & GFR',
+                        details: 'Detaillierte Darstellung von Knochen, Organen und Gefäßen. Bei Kontrastmittelgabe ist eine intakte Nieren- und Schilddrüsenfunktion Voraussetzung.' 
                     },
                     {
                         id: 201,
                         title: 'Herz-CT / Cardio-CT',
                         category: 'ct',
                         icon: 'heart',
-                        description: 'Nicht-invasive Darstellung der Herzkranzgefäße zum Ausschluss einer koronaren Herzkrankheit (KHK).',
-                        duration: '15 Min',
-                        prep: 'Pulsregulierung ggf. notwendig',
-                        details: 'Ermöglicht den Ausschluss relevanter Gefäßverengungen ohne Herzkatheter. Inklusive Calcium-Scoring zur Risikoabschätzung.'
+                        description: 'Nicht-invasive Darstellung der Herzkranzgefäße (Kalk-Scoring und Angiographie).',
+                        prep: 'Pulsregulierung, Rücksprache Kardiologe, Nüchtern (3h)',
+                        details: 'Dient dem Ausschluss einer koronaren Herzkrankheit. Beta-Blocker können zur Senkung der Herzfrequenz notwendig sein.'
                     },
 
                     // --- Mammographie ---
@@ -170,10 +183,9 @@
                         title: 'Digitale Mammographie & Tomosynthese', 
                         category: 'mammo', 
                         icon: 'user', 
-                        description: 'Zertifiziertes Brustzentrum: Digitale Vollfeldmammographie inklusive 3D-Schichtbildgebung (Tomosynthese).', 
-                        duration: '15 Min', 
-                        prep: 'Bitte keine Deos oder Puder verwenden',
-                        details: 'Höchste diagnostische Sicherheit durch 3D-Technik, besonders bei dichtem Drüsengewebe. Ergänzend bieten wir hochauflösenden Mamma-Ultraschall und MR-Mammographie an. Bei auffälligen Befunden führen wir minimal-invasive Vakuumbiopsien durch.' 
+                        description: 'Röntgenuntersuchung der Brust inklusive 3D-Schichtbildgebung zur Krebsfrüherkennung.', 
+                        prep: 'Keine Deos/Creme im Brustbereich',
+                        details: 'Zertifiziertes Brustzentrum. Die Tomosynthese erhöht die Diagnosesicherheit, besonders bei dichterem Gewebe.' 
                     },
 
                     // --- Röntgen ---
@@ -182,10 +194,9 @@
                         title: 'Konventionelles Röntgen', 
                         category: 'xray', 
                         icon: 'image', 
-                        description: 'Volldigitale Direkttadiographie für Skelett- und Thoraxdiagnostik mit minimaler Strahlenbelastung.', 
-                        duration: '5 Min', 
-                        prep: 'Keine spezielle Vorbereitung',
-                        details: 'Sofortige digitale Verfügbarkeit der Bilder für die weiterbehandelnden Kliniken. Einsatz modernster Flachdetektoren für optimale Bildqualität.'
+                        description: 'Basisdiagnostik für Knochen (Brüche, Verschleiß) und Lunge (Entzündung).', 
+                        prep: 'Keine',
+                        details: 'Schnelle und strahlungsarme digitale Aufnahmen. Sofortige Verfügbarkeit der Bilder für die Weiterbehandlung.'
                     },
 
                     // --- Intervention ---
@@ -194,50 +205,63 @@
                         title: 'Gefäßinterventionen (Angiographie)', 
                         category: 'intervention', 
                         icon: 'crosshair', 
-                        description: 'Minimal-invasive Therapie von Gefäßerkrankungen mittels Kathetertechnik in unserer DSA-Anlage.', 
-                        duration: '30-90 Min', 
-                        prep: 'Stationäre Aufnahme i.d.R. erforderlich',
-                        details: 'Behandlung der Schaufensterkrankheit (pAVK) durch Ballondilatation (PTA) und Stentimplantation. Notfallversorgung bei akuten Gefäßverschlüssen oder Blutungen.' 
+                        description: 'Katheterbehandlung von Gefäßverengungen (Ballon/Stent) oder Verschlüssen.', 
+                        prep: 'Stationäre Aufnahme, Nüchtern, Gerinnungswerte',
+                        details: 'Minimal-invasive Therapie der "Schaufensterkrankheit" (pAVK) unter örtlicher Betäubung.' 
                     },
                     { 
                         id: 6, 
                         title: 'CT-gesteuerte Schmerztherapie (PRT)', 
                         category: 'intervention', 
                         icon: 'target', 
-                        description: 'Periradikuläre Therapie (PRT): Millimetergenaue Injektion an die Nervenwurzel bei Bandscheibenvorfällen.', 
-                        duration: '10-15 Min', 
+                        description: 'Gezielte Injektion an die Nervenwurzel bei Bandscheibenvorfällen.', 
                         prep: 'Keine Blutverdünner, Fahrer organisieren',
-                        details: 'Gezielte Applikation von entzündungshemmenden und schmerzstillenden Medikamenten direkt an den Ort der Schmerzentstehung. Ambulant durchführbar.' 
+                        details: 'Schmerzlinderung durch präzise Medikamentengabe unter CT-Sicht. Nach der Behandlung besteht Fahruntüchtigkeit.' 
                     },
                     { 
                         id: 7, 
                         title: 'Facetten- & ISG-Infiltration', 
                         category: 'intervention', 
                         icon: 'target', 
-                        description: 'Behandlung von Rückenschmerzen durch Infiltration der kleinen Wirbelgelenke oder des Iliosakralgelenks.', 
-                        duration: '10-15 Min', 
-                        prep: 'Keine Blutverdünner',
-                        details: 'Effektive Therapie bei verschleißbedingten Rückenschmerzen (Facettensyndrom). Durchführung unter CT-Kontrolle für höchste Präzision.' 
+                        description: 'Behandlung von verschleißbedingten Rückenschmerzen an den Wirbelgelenken.', 
+                        prep: 'Keine Blutverdünner, ggf. Fahrer',
+                        details: 'Injektion von Schmerzmitteln und Entzündungshemmern direkt an die kleinen Wirbelgelenke oder das Kreuz-Darmbein-Gelenk.' 
                     },
                     { 
                         id: 8, 
                         title: 'Gelenkembolisation (TAME)', 
                         category: 'intervention', 
                         icon: 'circle-off', 
-                        description: 'Innovatives Verfahren gegen chronische Gelenkschmerzen (z.B. Kniearthrose, Frozen Shoulder).', 
-                        duration: '45-60 Min', 
-                        prep: 'Vorgespräch nötig',
-                        details: 'Durch den Verschluss kleinster krankhafter Blutgefäße ("Neovaskularisation") wird die Entzündung im Gelenk reduziert und der Schmerz gelindert. Schonende Alternative zur OP.' 
+                        description: 'Verschluss krankhafter Gefäße bei chronischen Gelenkschmerzen (z.B. Knie, Schulter).', 
+                        prep: 'Vorgespräch & aktuelle MRT-Bilder',
+                        details: 'Innovative Therapieoption bei Arthrose oder "Frozen Shoulder", wenn konservative Maßnahmen nicht helfen.' 
                     },
                     { 
                         id: 9, 
                         title: 'Interventionelle Tumortherapie', 
                         category: 'intervention', 
                         icon: 'zap', 
-                        description: 'Lokal ablative und intraarterielle Verfahren zur Behandlung von Lebertumoren und Metastasen.', 
-                        duration: 'Individuell', 
-                        prep: 'Interdisziplinäre Tumorkonferenz',
-                        details: 'Einsatz von Hitze (Mikrowellenablation MWA), Kälte oder direkter Chemotherapie-Gabe in das Tumor-gefäß (TACE, SIRT) zur Zerstörung von Tumorgewebe.' 
+                        description: 'Lokale Zerstörung von Tumoren durch Hitze (Ablation) oder Embolisation.', 
+                        prep: 'Interdisziplinärer Tumorkonferenz-Beschluss',
+                        details: 'Minimal-invasive Verfahren zur Behandlung von Lebertumoren oder Metastasen als Alternative oder Ergänzung zur OP.' 
+                    },
+                    {
+                        id: 91,
+                        title: 'Portkateter-Anlage und Kontrolle',
+                        category: 'intervention',
+                        icon: 'anchor',
+                        description: 'Implantation eines dauerhaften venösen Zugangs unter die Haut.',
+                        prep: 'Nüchtern, aktuelle Gerinnungswerte',
+                        details: 'Ermöglicht eine sichere und venenschonende Gabe von Chemotherapie oder Ernährung über einen längeren Zeitraum. Kleiner operativer Eingriff in Lokalanästhesie.'
+                    },
+                    {
+                        id: 92,
+                        title: 'PICC-Line Anlage',
+                        category: 'intervention',
+                        icon: 'activity',
+                        description: 'Einlage eines peripheren zentralvenösen Katheters über den Oberarm.',
+                        prep: 'Keine Blutverdünner, sterile Bedingungen',
+                        details: 'Mittelfristige Lösung für Infusionstherapien. Schonender als ein ZVK, da die Anlage peripher am Arm erfolgt.'
                     },
 
                     // --- Kinderradiologie ---
@@ -246,40 +270,36 @@
                         title: 'Kinderultraschall (Sonographie)', 
                         category: 'kinder', 
                         icon: 'waves', 
-                        description: 'Strahlenfreie Diagnostik vom Säugling bis zum Jugendlichen in kindgerechter Atmosphäre.', 
-                        duration: '15-30 Min', 
-                        prep: 'Ggf. nüchtern (Bauch)',
-                        details: 'Schmerzfreie Untersuchung von Bauchorganen, Nieren/Harnwegen, Hüfte (Säuglingsscreening), Gehirn (durch die Fontanelle) und Weichteilen.' 
+                        description: 'Strahlenfreie Untersuchung von Bauch, Hüfte oder Gehirn (Säuglinge).', 
+                        prep: 'Ggf. nüchtern (Bauchorgane)',
+                        details: 'Schmerzfrei und beliebig oft wiederholbar. Eltern können während der gesamten Untersuchung anwesend sein.' 
                     },
                     { 
                         id: 11, 
                         title: 'Durchleuchtung bei Kindern', 
                         category: 'kinder', 
                         icon: 'monitor', 
-                        description: 'Funktionsuntersuchungen wie MCU (Miktionszystourethrogramm) oder Magen-Darm-Passage.', 
-                        duration: '30 Min', 
-                        prep: 'Nach Absprache',
-                        details: 'Durchführung unter strengster Indikationsstellung und Dosisminimierung (gepulste Durchleuchtung) zur Abklärung von Reflux oder Fehlbildungen.' 
+                        description: 'Untersuchung von Blase/Nieren (MCU) oder Magen-Darm-Trakt.', 
+                        prep: 'Nach individueller Absprache',
+                        details: 'Klärung von Reflux oder Fehlbildungen. Wir nutzen spezielle Kinderfilter zur Dosisminimierung.' 
                     },
                     { 
                         id: 12, 
                         title: 'Röntgen bei Kindern (Low-Dose)', 
                         category: 'kinder', 
                         icon: 'image', 
-                        description: 'Digitales Röntgen mit speziellen Kinderfiltern und minimaler Dosis.', 
-                        duration: '5-10 Min', 
+                        description: 'Knochen- oder Lungenaufnahmen mit minimaler Dosis.', 
                         prep: 'Keine',
-                        details: 'Erfahrenes Personal und kindgerechte Einstelltechniken sorgen für optimale Bilder bei geringstmöglicher Strahlenbelastung.' 
+                        details: 'Kindgerechte Atmosphäre und erfahrene MTRAs sorgen für eine zügige und stressfreie Durchführung.' 
                     },
                     { 
                         id: 13, 
                         title: 'Kinder-MRT & CT', 
                         category: 'kinder', 
                         icon: 'layers', 
-                        description: 'Schnittbilddiagnostik mit speziellen pädiatrischen Protokollen (Low-Dose CT / schnelles MRT).', 
-                        duration: '20-45 Min', 
-                        prep: 'Absprache erforderlich (ggf. Sedierung)',
-                        details: 'Wenn möglich, bevorzugen wir das strahlenfreie MRT. Bei Kleinkindern bieten wir Untersuchungen in Sedierung in enger Kooperation mit der Klinik für Kinder- und Jugendmedizin an.' 
+                        description: 'Schnittbilddiagnostik angepasst auf kindliche Bedürfnisse.', 
+                        prep: 'Absprache (ggf. Sedierung/Narkose)',
+                        details: 'Wir bevorzugen das strahlenfreie MRT. Narkoseuntersuchungen führen wir gemeinsam mit der Kinderklinik durch.' 
                     }
                 ],
 
@@ -605,11 +625,8 @@
                                         <!-- Detail-Beschreibung -->
                                         <div class="text-sm text-[#555] mb-3" x-text="service.details"></div>
                                         
-                                        <div class="bg-[#f5f5f5] p-3 text-xs text-[#333] border-l-2 border-primary">
-                                            <div class="grid sm:grid-cols-2 gap-2">
-                                                <div><strong>Dauer:</strong> <span x-text="service.duration"></span></div>
-                                                <div><strong>Vorbereitung:</strong> <span x-text="service.prep"></span></div>
-                                            </div>
+                                        <div x-show="service.prep" class="bg-[#f5f5f5] p-3 text-xs text-[#333] border-l-2 border-primary">
+                                            <div><strong>Vorbereitung:</strong> <span x-text="service.prep"></span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -660,8 +677,8 @@
                                  <template x-for="(item, index) in nuclearDetails" :key="index">
                                      <div class="border border-[#e5e5e5]">
                                          <div 
-                                            class="bg-[#f9f9f9] px-4 py-3 cursor-pointer hover:bg-[#f0f0f0] flex justify-between items-center"
-                                            @click="openItem === index ? openItem = null : openItem = index"
+                                             class="bg-[#f9f9f9] px-4 py-3 cursor-pointer hover:bg-[#f0f0f0] flex justify-between items-center"
+                                             @click="openItem === index ? openItem = null : openItem = index"
                                          >
                                              <span class="font-bold text-[#333]" x-text="item.title"></span>
                                              <i data-lucide="chevron-down" class="w-4 h-4 text-[#999] transition-transform" :class="{'rotate-180': openItem === index}"></i>
@@ -765,7 +782,7 @@
                             </li>
                             <li class="flex items-start gap-3">
                                 <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mt-0.5"></i>
-                                <div><strong>Laborwerte:</strong> Für CT- oder MRT-Untersuchungen mit Kontrastmittel benötigen wir aktuelle Nierenwerte (Kreatinin) und Schilddrüsenwerte (TSH).</div>
+                                <div><strong>Laborwerte:</strong> Für CT-Untersuchungen mit Kontrastmittel benötigen wir eine aktuelle GFR und den TSH-Wert. Für MRT-Untersuchungen mit Kontrastmittel ist eine aktuelle GFR (Nierenfunktion) erforderlich.</div>
                             </li>
                         </ul>
                     </div>
@@ -1063,7 +1080,7 @@
                         <div class="border border-[#e5e5e5] p-6 bg-[#fdfdfd]">
                             <h3 class="!mt-0 text-xl text-[#333] mb-4">Arbeiten im St. Georg</h3>
                             <ul class="space-y-2 text-sm text-[#666]">
-                                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Modernste Geräteausstattung (3T MRT, Dual Source CT)</li>
+                                <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Modernste Geräteausstattung (3T MRT, 128-Zeilen CT)</li>
                                 <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Breites medizinisches Spektrum (Trauma, Onkologie, Neuro)</li>
                                 <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Kollegiales Arbeitsklima und flache Hierarchien</li>
                                 <li class="flex gap-2"><i data-lucide="check" class="w-4 h-4 text-primary"></i> Tarifliche Vergütung und Sozialleistungen</li>
@@ -1131,7 +1148,7 @@
                                 <h4 class="font-bold text-sm mb-3 flex items-center gap-2"><i data-lucide="file-check" class="w-4 h-4 text-primary"></i> Vor der Untersuchung</h4>
                                 <ul class="text-sm space-y-2 list-disc list-inside text-[#333]">
                                     <li><strong>Überweisungsschein:</strong> Bitte vollständig mit Fragestellung und Indikation ausfüllen.</li>
-                                    <li><strong>Laborwerte (CT/MRT):</strong> Aktuelles Kreatinin und TSH (max. 14 Tage alt) bei Kontrastmittelgabe erforderlich.</li>
+                                    <li><strong>Laborwerte (Kontrastmittel):</strong> Für CT-Untersuchungen werden eine aktuelle GFR und der TSH-Wert benötigt. Für MRT-Untersuchungen ist eine aktuelle GFR erforderlich.</li>
                                     <li><strong>Metformin:</strong> Bei Diabetikern ggf. 48h Pause nach Rücksprache.</li>
                                     <li><strong>MRT-Sicherheit:</strong> Herzschrittmacher, Implantate oder Metallsplitter müssen zwingend angegeben werden. <strong class="text-primary">Bitte Ausweis vorab faxen!</strong></li>
                                     <li><strong>Voraufnahmen:</strong> Bitte Patienten bitten, relevante Bilder (CD) mitzubringen, falls nicht digital verfügbar.</li>
@@ -1150,24 +1167,6 @@
 
                     <!-- Direkte Durchwahlen -->
                     <div class="grid md:grid-cols-2 gap-6 mb-8">
-                        <div class="bg-[#f9f9f9] border border-[#e5e5e5] p-5 border-l-4 border-l-primary">
-                            <h3 class="!mt-0 !text-base border-b border-[#ddd] pb-2 mb-3 font-bold text-[#333]">Dienstarzt / Befundauskunft</h3>
-                            <ul class="text-sm space-y-3">
-                                <li class="flex justify-between border-b border-[#eee] pb-2">
-                                    <span>CT & MRT:</span>
-                                    <span class="font-bold">0341 909-2666</span>
-                                </li>
-                                <li class="flex justify-between border-b border-[#eee] pb-2">
-                                    <span>Angiographie / Intervention:</span>
-                                    <span class="font-bold">0341 909-3470</span>
-                                </li>
-                                <li class="flex justify-between">
-                                    <span>Nuklearmedizin:</span>
-                                    <span class="font-bold">0341 909-2240</span>
-                                </li>
-                            </ul>
-                        </div>
-                        
                         <div class="bg-[#f9f9f9] border border-[#e5e5e5] p-5">
                             <h3 class="!mt-0 !text-base border-b border-[#ddd] pb-2 mb-3 font-bold text-[#333]">Chefarztsekretariat</h3>
                             <p class="text-sm mb-2"><strong>Fr. Benker</strong></p>
@@ -1181,20 +1180,19 @@
 
                     <!-- TELERADIOLOGIE BLOCK -->
                     <div class="border border-[#e5e5e5] p-5 mb-8 bg-white shadow-sm">
-                        <h3 class="!mt-0 text-lg border-b border-[#ddd] pb-2 mb-4">Teleradiologie-Netzwerk</h3>
+                        <h3 class="!mt-0 text-lg border-b border-[#ddd] pb-2 mb-4">Teleradiologie</h3>
                         <div class="flex flex-col md:flex-row gap-6">
                             <div class="md:w-2/3">
                                 <p class="text-sm mb-3">
-                                    Unsere Klinik ist zertifizierter Partner im Teleradiologie-Verbund. Wir bieten externen Krankenhäusern und Kooperationspartnern eine qualifizierte radiologische Befundung rund um die Uhr (24/7).
+                                    Unsere Klinik bietet teleradiologische Leistungen für externe Kliniken und Kooperationspartner an. Wir gewährleisten eine qualifizierte radiologische Befundung rund um die Uhr (24/7).
                                 </p>
                                 <ul class="list-disc list-inside text-sm text-[#333] mb-4 space-y-1">
                                     <li>Notfallbefundung (CT/MRT) im Nacht- und Wochenenddienst</li>
                                     <li>Zweitmeinungen bei komplexen Fällen</li>
                                     <li>Urlaubsvertretung für radiologische Abteilungen</li>
                                 </ul>
-                                <div class="bg-[#f9f9f9] p-3 text-xs border-l-2 border-primary">
-                                    <strong>Technische Anbindung:</strong><br>
-                                    Die Bildübertragung erfolgt verschlüsselt via DICOM-E-Mail oder VPN-Tunnel (gemäß RöV/StrlSchG und DIN 6868-159).
+                                <div class="text-sm text-[#333]">
+                                    <strong>Kontakt für Kooperationen:</strong> Frau Benker (Tel: 0341 909-2701)
                                 </div>
                             </div>
                             <div class="md:w-1/3 flex flex-col justify-center items-center bg-[#f5f5f5] p-4 border border-[#ddd]">
@@ -1226,11 +1224,6 @@
                         </div>
                     </div>
 
-                    <!-- Konferenzen -->
-                    <div class="bg-[#fffbe6] border border-[#ffe58f] p-4 text-sm text-[#595028]">
-                        <strong>Interdisziplinäre Tumorboards:</strong><br>
-                        Täglich 14:30 Uhr (Demonstrationsraum Radiologie). Anmeldung externer Patienten bitte bis 12:00 Uhr über das Sekretariat.
-                    </div>
                 </div>
 
                 <!-- VIEW: KONTAKT -->
