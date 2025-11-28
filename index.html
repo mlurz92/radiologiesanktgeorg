@@ -102,10 +102,10 @@
                 ],
 
                 features: [
-                    { title: 'MRT & CT Diagnostik', desc: 'Hochauflösende Schnittbilddiagnostik (3 Tesla & 128-Zeilen).', targetView: 'services', filterId: 'mrt', img: 'image/MRT und CT.jpg' },
+                    { title: 'MRT & CT Diagnostik', desc: 'Modernste Geräte (3T und 1,5 T MRTs, 128 Zeilen und 64 Zeilen CTs).', targetView: 'services', filterId: 'mrt', img: 'image/MRT und CT.jpg' },
                     { title: 'Interventionelle Therapie', desc: 'Minimal-invasive Verfahren: Schmerztherapie, Gefäßinterventionen, Tumortherapie.', targetView: 'services', filterId: 'intervention', img: 'image/Intervention.jpg' },
                     { title: 'Nuklearmedizin', desc: 'Funktionsdiagnostik, Szintigraphie und PET/CT.', targetView: 'nuclear', filterId: 'all', img: 'image/St_Georg_Nuklearmedizin_web.jpg' },
-                    { title: 'Mammographie', desc: 'Zertifiziertes Brustzentrum Leipzig Nord.', targetView: 'services', filterId: 'mammo', img: 'image/Mammographie.jpg' },
+                    { title: 'Mammographie', desc: 'Zertifiziertes Brustzentrum.', targetView: 'services', filterId: 'mammo', img: 'image/Mammographie.jpg' },
                     { title: 'Kinderradiologie', desc: 'Kindgerechte Diagnostik: Ultraschall, Low-Dose Röntgen und spezielle MRT/CT-Protokolle.', targetView: 'services', filterId: 'kinder', img: 'image/Kinderradiologie.jpg' }
                 ],
 
@@ -117,8 +117,17 @@
                         category: 'mrt', 
                         icon: 'activity', 
                         description: 'Untersuchung von Gehirn, Rückenmark, Bauchorganen oder Gefäßen mittels Magnetfeld.', 
-                        prep: 'Metallteile ablegen, aktuelle GFR (bei KM-Gabe)',
+                        prep: 'Metallteile ablegen, aktuelle GFR (bei KM-Gabe), Implantateausweis ggf. mitbringen',
                         details: 'Wir nutzen modernste 1.5T und 3T Geräte. Bitte bringen Sie Implantatausweise mit.'
+                    },
+                    {
+                        id: 100,
+                        title: 'Spezialisierte Tumordiagnostik',
+                        category: 'mrt',
+                        icon: 'crosshair',
+                        description: 'Detaillierte Ausbreitungsdiagnostik (Staging) bei Krebserkrankungen.',
+                        prep: 'Aktuelle GFR (bei KM), Implantateausweis ggf. mitbringen',
+                        details: 'Hochpräzise Bildgebung zur Therapieplanung und Verlaufskontrolle.'
                     },
                     {
                         id: 101,
@@ -130,13 +139,13 @@
                         details: 'Hochauflösende Darstellung zur Lokalisation verdächtiger Areale, oft vor einer Biopsie. Wir verabreichen ein Medikament zur Ruhigstellung des Darms (Buscopan), daher ist Fahrtüchtigkeit eingeschränkt.'
                     },
                     {
-                        id: 105,
-                        title: 'Dynamische Beckenboden-MRT (Defäkographie)',
+                        id: 107,
+                        title: 'Gynäkologische Becken-MRT',
                         category: 'mrt',
-                        icon: 'layers',
-                        description: 'Funktionsuntersuchung des Beckenbodens bei Entleerungsstörungen oder Senkungsbeschwerden.',
-                        prep: 'Mastdarmentleerung vor Untersuchung',
-                        details: 'Die Untersuchung erfolgt in Ruhe und unter Pressen, um die Bewegung der Beckenorgane sichtbar zu machen. Schmerzfrei und ohne Strahlenbelastung.'
+                        icon: 'user',
+                        description: 'Diagnostik bei Endometriose, Myomen oder Tumoren des weiblichen Beckens.',
+                        prep: 'Mastdarmentleerung, Fahrer organisieren',
+                        details: 'Detaillierte Darstellung der Gebärmutter und Eierstöcke. Gabe von Buscopan zur Darmberuhigung möglich, um Bewegungsartefakte zu minimieren (Fahruntüchtigkeit).'
                     },
                     {
                         id: 106,
@@ -155,6 +164,15 @@
                         description: 'Detailgenaue Darstellung von Knorpel, Bändern und Sehnen an allen Gelenken.',
                         prep: 'Keine spezielle Vorbereitung',
                         details: 'Spezielle Spulen für Hand, Fuß, Knie oder Schulter ermöglichen die Erkennung kleinster Verletzungen oder Abnutzungen.'
+                    },
+                    {
+                        id: 105,
+                        title: 'Dynamische Beckenboden-MRT (Defäkographie)',
+                        category: 'mrt',
+                        icon: 'layers',
+                        description: 'Funktionsuntersuchung des Beckenbodens bei Entleerungsstörungen oder Senkungsbeschwerden.',
+                        prep: 'Mastdarmentleerung vor Untersuchung',
+                        details: 'Vor der Untersuchung erfolgt die sanfte Befüllung des Mastdarmes mit Ultraschallgel, welches während der Untersuchung durch Pressen und Entspannen auf natürlichem Weg ausgeschieden wird und so eine direkte Beurteilung der Bewegung der Beckenorgane und Muskulatur des Beckenbodens ermöglicht. Schmerzfrei und ohne Strahlenbelastung.'
                     },
 
                     // --- CT ---
@@ -305,7 +323,7 @@
 
                 nuclearDetails: [
                     {
-                        title: '(1) Schilddrüsensonographie und -szintigraphie',
+                        title: 'Schilddrüsensonographie und -szintigraphie',
                         content: `
                             <p>Bei dem <strong>Schilddrüsenultraschall (Schilddrüsensonographie)</strong> können <strong>Strukturveränderungen</strong> der Schilddrüse untersucht werden. Hierbei kann eine Vergrößerung der Schilddrüse (Struma) oder eine Gewebeveränderung entdeckt werden und/oder Schilddrüsenknoten morphologisch beurteilt werden.</p>
                             <p class="mt-2">Die <strong>Schilddrüsenszintigraphie</strong> dient der Beurteilung der <strong>Schilddrüsenfunktion</strong>. Einzelne Schilddrüsenknoten oder das gesamte Gewebe können hinsichtlich Ihrer Funktion beurteilt werden. So kann zum Beispiel zwischen kalten oder heißen Knoten (autonome Adenome) unterschieden werden.</p>
@@ -337,7 +355,7 @@
                         `
                     },
                     {
-                        title: '(2) Skelettszintigraphie',
+                        title: 'Skelettszintigraphie',
                         content: `
                             <p>Mit der Skelett– oder Knochenszintigraphie kann ein <strong>gesteigerter Knochenstoffwechsel</strong> dargestellt werden. Im Gegensatz zu einer Röntgenuntersuchung können in der Skelettszintigraphie krankhafte Veränderungen bereits in einem frühen Stadium nachgewiesen werden.</p>
                             
@@ -374,7 +392,7 @@
                         `
                     },
                     {
-                        title: '(3) Nierenszintigraphie',
+                        title: 'Nierenszintigraphie',
                         content: `
                             <p>Es können sowohl statische als auch dynamische Untersuchungen der Nieren erfolgen.</p>
                             <p class="mt-2">Die häufigste ist eine dynamische MAG-3-Nierenszintigraphie. Hierbei kann die <strong>Gesamtfunktion</strong> der Nieren, die <strong>einzelnen Funktionsanteile</strong> beider Nieren und der <strong>seitengetrennte Harnabfluss</strong> beurteilt werden.</p>
@@ -404,7 +422,7 @@
                         `
                     },
                     {
-                        title: '(4) Myokardszintigraphie',
+                        title: 'Myokardszintigraphie',
                         content: `
                             <p>Bei der Myokardszintigraphie wird die <strong>Durchblutung des Herzmuskels</strong> durch den Einsatz einer gering radioaktiven Strahlung abgebildet. Dadurch können Durchblutungsstörungen erkannt oder eine bekannte koronare Herzkrankheit kontrolliert werden. Sie ist im Gegensatz zur Herzkatheteruntersuchung nicht-invasiv und damit wesentlich schonender. Die Strahlenexposition ist gering.</p>
 
@@ -456,7 +474,7 @@
                         `
                     },
                     {
-                        title: '(5) Lungenszintigraphie',
+                        title: 'Lungenszintigraphie',
                         content: `
                             <p>Eine Lungenszintigraphie besteht in der Regel aus einer Belüftungsuntersuchung (Ventilation) und einer Durchblutungsuntersuchung (Perfusion) der Lunge. Bei der Ventilationsuntersuchung wird eine schwach radioaktiv markierte Substanz eingeatmet und danach die Lungenbelüftung an der Gammakamera abgebildet.</p>
                             <p class="mt-2">Bei der Perfusionsuntersuchung werden ihnen unmittelbar im Anschluss an die Ventilationsaufnahme radioaktiv markierte Eiweißpartikel (Albumin) in die Vene gespritzt. Durch die Verteilung kann die Durchblutung der Lunge an der Gammakamera aufgezeichnet werden.</p>
@@ -483,7 +501,7 @@
                         `
                     },
                     {
-                        title: '(6) Wächterlymphknotenszintigraphie (Sentinelszintigraphie)',
+                        title: 'Wächterlymphknotenszintigraphie (Sentinelszintigraphie)',
                         content: `
                             <p>Der Wächterlymphknoten (oder Sentinel-Lymphknoten / SLN) ist der <strong>erste Lymphknoten</strong> im Lymphabstromgebiet <strong>einer Tumorregion</strong>. Durch die Markierung des Wächterlymphknotens (oder Sentinel-Lymphknotens) mit einer schwach radioaktiven Substanz, kann dieser intraoperativ mit einer speziellen Gammasonde detektiert und entfernt sowie anschließend in der Pathologie genau auf einen möglichen Tumorzellbefall untersucht werden.</p>
                             <p class="mt-2">Eine Markierung der Wächterlymphknoten erfolgt üblicherweise nur in einem frühen Krankheitsstadium.</p>
@@ -502,7 +520,7 @@
                         `
                     },
                     {
-                        title: '(7) Dopamin-Transporter-Szintigraphie (DatScan)',
+                        title: 'Dopamin-Transporter-Szintigraphie (DatScan)',
                         content: `
                             <p>Die Dopamin-Transporter-Szintigraphie ist eine spezielle Untersuchung zur <strong>frühzeitigen Diagnostik einer neurodegenerativen Parkinson-Erkrankung</strong>. Außerdem ist bei Demenzerkrankungen eine Unterscheidung zwischen einer Alzheimer-Demenz und einer Lewy-Body-Demenz möglich.</p>
 
@@ -542,7 +560,7 @@
                         `
                     },
                     {
-                        title: '(8) PET-/CT-Untersuchung',
+                        title: 'PET-/CT-Untersuchung',
                         content: `
                             <ul class="list-disc list-inside space-y-1 text-sm mb-4">
                                 <li>Diagnostik und Überwachung von Tumorerkrankungen</li>
@@ -592,7 +610,7 @@
                         `
                     },
                     {
-                        title: '(9) PSMA-PET/CT bei Prostatakarzinom',
+                        title: 'PSMA-PET/CT bei Prostatakarzinom',
                         content: `
                             <p>F18-PSMA („Prostata-Spezifische-Membranantigen“) ist ein gering radioaktiv markiertes Eiweißmolekül. Es weist gegenüber gesundem Gewebe eine deutlich erhöhte und relativ spezifische Bindung an Prostatakarzinomgewebe auf. Dadurch eignet es sich sehr gut, um sowohl bösartige Tumoren in der Prostata als auch Metastasen, zum Beispiel in Lymphknoten oder Knochen, sehr sensitiv darzustellen. Durch den Einsatz einer geringen Menge des sogenannten Radiotracers in Verbindung mit einem schnellen Zerfall ist die Strahlenexposition gering.</p>
 
@@ -633,7 +651,7 @@
                         `
                     },
                     {
-                        title: '(10) Weitere spezielle Untersuchungsverfahren nach Rücksprache',
+                        title: 'Weitere spezielle Untersuchungsverfahren nach Rücksprache',
                         content: '<p>zum Beispiel Entzündungsszintigraphie</p>'
                     }
                 ],
@@ -644,9 +662,7 @@
                         chief: [
                             { name: 'Prof. Dr. med. Arnd-Oliver Schäfer', role: 'Chefarzt', spec: 'Facharzt für Diagnostische Radiologie', phone: '0341 909-2701', mail: 'radiologie@sanktgeorg.de', img: 'image/csm_2022-01-11-Portraitbilder-Arnd-Oliver-Schaefer-Klinikum-St-Georg-10_7876dc872c.jpg' }
                         ],
-                        secretariat: [
-                            { name: 'Diana Benker', role: 'Chefarztsekretärin Radiologie', phone: '0341 909-2701', mail: 'radiologie@sanktgeorg.de', img: 'image/Diana Benker.jpg' }
-                        ],
+                        // secretariat removed
                         senior_lead: [
                             { name: 'Dr. med. Markus Lurz', role: 'Leitender Oberarzt', spec: 'Facharzt für Radiologie', phone: '0341 909-2701', mail: 'radiologie@sanktgeorg.de', img: 'image/Markus Lurz.jpg' }
                         ],
@@ -1587,7 +1603,7 @@
                     </ul>
                 </div>
                 <div class="sidebar-item">
-                    <h3><i data-lucide="clock" class="w-4 h-4 inline mr-1 text-primary"></i> Sprechzeiten</h3>
+                    <h3><i data-lucide="clock" class="w-4 h-4 inline mr-1 text-primary"></i> Sprechzeiten & Kontakt</h3>
                     <div class="text-sm mt-3">
                         <div class="flex justify-between border-b border-[#eee] pb-1 mb-1">
                             <span class="text-[#666]">Mo - Fr:</span>
@@ -1595,6 +1611,15 @@
                         </div>
                         <div class="mt-2 text-primary font-bold">
                             Tel: 0341 909 2701
+                        </div>
+                        
+                        <!-- Added Secretariat Info -->
+                        <div class="mt-4 pt-3 border-t border-[#eee]">
+                            <strong class="block text-[#333] mb-1">Chefarztsekretariat</strong>
+                            <div class="text-[#666]">Fr. Diana Benker</div>
+                            <div class="mt-1">
+                                <a href="mailto:radiologie@sanktgeorg.de" class="text-primary hover:underline block truncate">radiologie@sanktgeorg.de</a>
+                            </div>
                         </div>
                     </div>
                     <div class="mt-3 text-xs text-[#666] italic pt-3 border-t border-[#ddd]">In Notfällen wenden Sie sich bitte an die Zentrale Notaufnahme (24h).</div>
